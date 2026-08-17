@@ -153,6 +153,54 @@ function setForm(formkey) {
   render();
 }
 
+function publishedDocuments() {
+  return workspaceDocs().filter((doc) => doc.form && doc.form !== "formdef");
+}
+
+function downloadCorpus() {
+  if (state.doc.form === "formdef") publishFormdef(state.doc, { migrate: true });
+  const pack = buildCorpus({
+    formdefs: state.formdefs,
+    lists: state.lists,
+    documents: publishedDocuments(),
+  });
+  persistNow().catch(() => {});
+  download(`corpus-${pack.published.slice(0, 10)}.json`, pack);
+  setStatus("Published corpus downloaded");
+}
+
+function loadCorpus(data) {
+  const pack = buildCorpus(data);
+  const formdefs = {};
+  for (const [key, def] of Object.entries(pack.formdefs || {})) {
+    const formkey = def && (def.formkey || key);
+    if (!formkey || !def) continue;
+    formdefs[formkey] = def;
+  }
+  if (Object.keys(formdefs).length) {
+    state.formdefs = formdefs;
+    state.published = clone(formdefs);
+  }
+  if (pack.lists && Object.keys(pack.lists).length) state.lists = pack.lists;
+  state.stash = {};
+  for (const doc of pack.documents) {
+    if (doc && doc.form && doc.form !== "formdef") state.stash[doc.form] = doc;
+  }
+  const preferred =
+    (state.stash[state.formkey] && state.formkey) ||
+    pack.documents.find((doc) => doc && doc.form && doc.form !== "formdef")?.form;
+  const formkey =
+    (preferred && state.formdefs[preferred] && preferred) ||
+    Object.keys(state.formdefs).find((key) => state.formdefs[key]?.level === "main") ||
+    Object.keys(state.formdefs)[0] ||
+    "persoon";
+  state.formkey = formkey;
+  state.doc = state.stash[formkey] || { form: formkey, text: "" };
+  persistSoon();
+  render();
+  setStatus("Loaded published corpus");
+}
+
 function loadDocument(doc) {
   if (!doc || typeof doc !== "object") return;
   const next = { form: doc.form || state.formkey, text: doc.text || "", ...doc };
@@ -548,11 +596,13 @@ function bind() {
     persistNow().catch(() => {});
     download(name, data);
   });
+  document.getElementById("publish").addEventListener("click", downloadCorpus);
   document.getElementById("load-file").addEventListener("change", async (event) => {
     const file = event.target.files?.[0];
     if (!file) return;
     const data = JSON.parse(await file.text());
-    if (data.formkey && Array.isArray(data.fields) && data.form !== "formdef") {
+    if (isCorpus(data)) loadCorpus(data);
+    else if (data.formkey && Array.isArray(data.fields) && data.form !== "formdef") {
       state.formdefs[data.formkey] = data;
       loadDocument(formdefToDoc(data));
     } else {
