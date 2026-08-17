@@ -1,0 +1,26 @@
+{
+  "formkey": "tekstannotatie",
+  "formtitle": "Missiezending tekst annotatie",
+  "level": "secundair",
+  "namefield": "ankernaam",
+  "fields": [
+    {
+      "key": "ankernaam",
+      "title": "HTML-Ankernaam",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "annotatie_tekst",
+      "title": "Annotatie tekst",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    }
+  ]
+}

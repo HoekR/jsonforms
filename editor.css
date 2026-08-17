@@ -1,0 +1,367 @@
+:root {
+  --bg: #ebe4d6;
+  --paper: #f7f1e6;
+  --sheet: #fffaf1;
+  --ink: #1a1612;
+  --muted: #6f675c;
+  --line: #d4cbb8;
+  --accent: #8c2f1b;
+  --accent-ink: #fffaf1;
+  --island: #efe7d6;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.45 "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+button, select, input, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: var(--sheet);
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+button:hover,
+button:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+button.primary:hover,
+button.primary:focus-visible {
+  background: #6e2414;
+  border-color: #6e2414;
+}
+
+button.quiet {
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+  padding-inline: 0.45rem;
+}
+
+button.quiet:hover {
+  color: var(--accent);
+  border-color: transparent;
+}
+
+select, input[type="text"], input[type="file"]::file-selector-button {
+  background: var(--sheet);
+  border: 1px solid var(--line);
+  padding: 0.32rem 0.55rem;
+}
+
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: center;
+  padding: 0.7rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 11rem;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.brand span {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.tools, .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+header .spacer { flex: 1; }
+
+label.inline {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+label.inline select {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.92rem;
+  min-width: 10rem;
+}
+
+.file {
+  position: relative;
+  overflow: hidden;
+}
+
+.file input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(24rem, 0.85fr);
+  flex: 1;
+  min-height: 0;
+}
+
+.transcription {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 1.15rem 1.6rem 0.8rem 1.8rem;
+}
+
+.kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.55rem;
+}
+
+#text {
+  flex: 1;
+  width: 100%;
+  resize: none;
+  border: 1px solid var(--line);
+  background: var(--sheet);
+  padding: 1.6rem 1.8rem 1.8rem;
+  font: 1.12rem/1.65 Newsreader, "Iowan Old Style", Palatino, Georgia, serif;
+  color: var(--ink);
+}
+
+#text::placeholder {
+  color: #a39886;
+  font-style: italic;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin: 0.55rem 0 0;
+}
+
+.hint code {
+  font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.78rem;
+}
+
+.sidebar {
+  border-left: 1px solid var(--line);
+  overflow: auto;
+  padding: 1.1rem 1.1rem 2.2rem;
+  background: var(--paper);
+}
+
+.sidebar h2 {
+  margin: 1.4rem 0 0.55rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar h2:first-child { margin-top: 0.15rem; }
+
+.empty {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-style: italic;
+  margin: 0.2rem 0 0.8rem;
+}
+
+.island {
+  background: var(--island);
+  border-left: 3px solid var(--accent);
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0.75rem 0.85rem;
+  margin: 0 0 0.7rem;
+}
+
+.island-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+}
+
+.island-head strong {
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.island textarea,
+.island input[type="text"],
+.island select {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--sheet);
+  padding: 0.45rem 0.55rem;
+}
+
+.island textarea {
+  min-height: 7rem;
+  resize: vertical;
+  font-family: Newsreader, "Iowan Old Style", Palatino, Georgia, serif;
+  line-height: 1.5;
+}
+
+.island textarea.short {
+  min-height: 2.5rem;
+  font-family: inherit;
+}
+
+.checks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  max-height: 13rem;
+  overflow: auto;
+  padding: 0.15rem 0;
+}
+
+.checks label {
+  display: flex;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  padding: 0.12rem 0.1rem;
+}
+
+.filter {
+  width: 100%;
+  margin-bottom: 0.4rem;
+}
+
+.repeat-item {
+  border-top: 1px solid var(--line);
+  padding-top: 0.55rem;
+  margin-top: 0.55rem;
+}
+
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.palette button {
+  font-size: 0.78rem;
+  padding: 0.2rem 0.55rem;
+  background: var(--sheet);
+}
+
+.json-dock {
+  border-top: 1px solid var(--line);
+  background: #1c1814;
+  color: #e6dcc8;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.json-dock.open {
+  max-height: 22vh;
+}
+
+.json-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0.7rem 0.35rem 1.1rem;
+}
+
+.json-dock .kicker {
+  margin: 0;
+  padding: 0;
+  color: #c4b49a;
+}
+
+.json-dock button.quiet {
+  color: #c4b49a;
+}
+
+.json-dock button.quiet:hover {
+  color: #fffaf1;
+}
+
+.json-out {
+  margin: 0;
+  overflow: auto;
+  padding: 0.35rem 1.1rem 0.8rem;
+  font: 12px/1.45 "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  white-space: pre;
+  background: transparent;
+  color: inherit;
+}
+
+.json-out.hidden {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { border-left: 0; border-top: 1px solid var(--line); }
+  #text { min-height: 55vh; }
+}

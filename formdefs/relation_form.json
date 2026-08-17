@@ -1,0 +1,17 @@
+{
+  "formkey": "relation_form",
+  "formtitle": "Relation form",
+  "level": "secundair",
+  "namefield": null,
+  "fields": [
+    {
+      "key": "relation",
+      "title": "Link",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    }
+  ]
+}

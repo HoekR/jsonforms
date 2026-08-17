@@ -1,0 +1,71 @@
+{
+  "formkey": "formdef_field",
+  "formtitle": "Formdef field",
+  "level": "secundair",
+  "namefield": "key",
+  "fields": [
+    {
+      "key": "key",
+      "title": "Key",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "title",
+      "title": "Title",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "type",
+      "title": "Type",
+      "type": "choice",
+      "repeater": false,
+      "subname": null,
+      "contents_key": "formdef_field_type",
+      "widget": "standard"
+    },
+    {
+      "key": "repeater",
+      "title": "Repeater",
+      "type": "bool",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "contents_key",
+      "title": "List or nested formdef",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "subname",
+      "title": "Subname",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "widget",
+      "title": "Widget",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "formkey": "autopsie",
+  "formtitle": "Autopsie",
+  "level": "main",
+  "namefield": "titel",
+  "fields": [
+    {
+      "key": "titel",
+      "title": "Titel",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "text",
+      "title": "Inventaristekst",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "archief",
+      "title": "Tekst",
+      "type": "form",
+      "repeater": true,
+      "subname": "inventaris",
+      "contents_key": "autopsie_inventaris",
+      "widget": "standard"
+    },
+    {
+      "key": "opmerkingen",
+      "title": "Opmerkingen",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    }
+  ]
+}

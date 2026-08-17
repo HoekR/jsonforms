@@ -1,0 +1,548 @@
+{
+  "formkey": "instelling",
+  "formtitle": "Instelling",
+  "level": "main",
+  "namefield": "naam_archiefvormer",
+  "fields": [
+    {
+      "key": "naam_archiefvormer",
+      "title": "Naam archiefvormer",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "naam_varianten",
+      "title": "Naam, varianten",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "naam_varianten_link",
+      "title": "Naam, varianten (link):",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "land_herkomst",
+      "title": "Land van herkomst archiefvormer",
+      "type": "list",
+      "repeater": true,
+      "subname": "land",
+      "contents_key": "emigratie_land_herkomst",
+      "widget": "standard"
+    },
+    {
+      "key": "periode_van_bestaan",
+      "title": "Periode van bestaan",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "organisatie",
+      "title": "Organisatie en inrichting",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "organisatie_link",
+      "title": "Organisatie en inrichting (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "taak",
+      "title": "Taak, activiteiten",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "taak_link",
+      "title": "Taak, activiteiten (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "voorloper",
+      "title": "Voorloper",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "voorloper_link",
+      "title": "Voorloper (link):",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "opvolger",
+      "title": "Opvolger",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "opvolger_link",
+      "title": "Opvolger (link):",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "typering_instelling",
+      "title": "Typering instelling",
+      "type": "list",
+      "repeater": true,
+      "subname": "typering",
+      "contents_key": "emigratie_typering_archiefvormer_instelling",
+      "widget": "standard"
+    },
+    {
+      "key": "typering_taken",
+      "title": "Typering taken",
+      "type": "list",
+      "repeater": true,
+      "subname": "typering",
+      "contents_key": "emigratie_typering_archiefvormer_taken",
+      "widget": "standard"
+    },
+    {
+      "key": "zuil",
+      "title": "Kerkelijke denominatie / zuil",
+      "type": "list",
+      "repeater": true,
+      "subname": "kerk",
+      "contents_key": "emigratie_kerkelijke_denominatie",
+      "widget": "standard"
+    },
+    {
+      "key": "doelgroepen",
+      "title": "Doelgroepen",
+      "type": "list",
+      "repeater": true,
+      "subname": "doelgroep",
+      "contents_key": "emigratie_doelgroepen",
+      "widget": "standard"
+    },
+    {
+      "key": "andere_archiefvormers",
+      "title": "Verband met andere archiefvormers: is vertegenwoordigd in:",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "andere_archiefvormers_link",
+      "title": "Verband met andere archiefvormers: is vertegenwoordigd in (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "literatuur",
+      "title": "Literatuur",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "literatuur_link",
+      "title": "Literatuur (link):",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "archieven",
+      "title": "Doorgenomen archieven / series",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "archieven_link",
+      "title": "Doorgenomen archieven / series (links)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "periode_archief",
+      "title": "Periode archief",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "periode_archief_link",
+      "title": "Periode archief (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "vindplaats",
+      "title": "Vindplaats",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "vindplaats_link",
+      "title": "Vindplaats (link):",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "openbaarheid",
+      "title": "Openbaarheid",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "openbaarheid_link",
+      "title": "Openbaarheid (link):",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "omvang_invnr",
+      "title": "Omvang; inventarisnummers",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "omvang_invnr_link",
+      "title": "Omvang; inventarisnummers (link)",
+      "type": "form",
+      "repeater": false,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "informatiedrager",
+      "title": "Informatiedrager",
+      "type": "list",
+      "repeater": true,
+      "subname": "drager",
+      "contents_key": "emigratie_informatiedrager",
+      "widget": "standard"
+    },
+    {
+      "key": "vernietigd",
+      "title": "Vernietigd",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "vernietigd_link",
+      "title": "Vernietigd (link):",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "toegang",
+      "title": "Toegang(en)",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "toegang_link",
+      "title": "Toegang(en) (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "kenmerk_toegang",
+      "title": "Kenmerk toegang",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "kenmerk_toegang_link",
+      "title": "Kenmerk toegang (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "indices_toegang",
+      "title": "Indices op toegang",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "indices_toegang_link",
+      "title": "Indices op toegang (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "originele_archivalia_ander",
+      "title": "Originele archivalia van archiefvormer in andere archieven",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "originele_archivalia_ander_link",
+      "title": "Originele archivalia van archiefvormer in andere archieven (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "originele_archivalia_deze",
+      "title": "Originele archivalia van andere archiefvormers in dit archief; gedeponeerde archieven",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "originele_archivalia_deze_link",
+      "title": "Originele archivalia van andere archiefvormers in dit archief; gedeponeerde archieven (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "opmerkingen_archief",
+      "title": "opmerkingen structuur archief",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "opmerkingen_archief_link",
+      "title": "opmerkingen structuur archief (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "seriele_bescheiden",
+      "title": "Seriële bescheiden",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "seriele_bescheiden_link",
+      "title": "Seriële bescheiden (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "statistische_gegevens",
+      "title": "Statistische gegevens",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "statistische_gegevens_link",
+      "title": "Statistische gegevens (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "verw_wetten",
+      "title": "Verwijzingen naar wetten, besluiten en/of de uitvoering daarvan",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "verw_wetten_link",
+      "title": "Verwijzingen naar wetten, besluiten en/of de uitvoering daarvan (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "inhoud_overig",
+      "title": "Inhoud overig",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "inhoud_overig_link",
+      "title": "Inhoud overig (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "bestemmings_landen",
+      "title": "Bestemmingslanden",
+      "type": "list",
+      "repeater": true,
+      "subname": "land",
+      "contents_key": "emigratie_bestemmingslanden",
+      "widget": "standard"
+    },
+    {
+      "key": "opmerkingen",
+      "title": "Opmerkingen",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "opmerkingen_link",
+      "title": "Opmerkingen (link)",
+      "type": "form",
+      "repeater": true,
+      "subname": "relation",
+      "contents_key": "relation_form",
+      "widget": "standard"
+    },
+    {
+      "key": "verw_wetten_ned",
+      "title": "Verwijzingen naar wetten, Nederland",
+      "type": "list",
+      "repeater": true,
+      "subname": "wet",
+      "contents_key": "emigratie_wettenned",
+      "widget": "standard"
+    },
+    {
+      "key": "verw_wetten_bilateraal",
+      "title": "Verwijzingen naar wetten, Bilateraal",
+      "type": "list",
+      "repeater": true,
+      "subname": "wet",
+      "contents_key": "emigratie_wettenbilateraal",
+      "widget": "standard"
+    },
+    {
+      "key": "verw_wetten_multilateraal",
+      "title": "Verwijzingen naar wetten, Multilateraal",
+      "type": "list",
+      "repeater": true,
+      "subname": "wet",
+      "contents_key": "emigratie_wettenmultilateraal",
+      "widget": "standard"
+    }
+  ]
+}

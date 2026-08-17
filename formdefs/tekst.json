@@ -1,0 +1,35 @@
+{
+  "formkey": "tekst",
+  "formtitle": "Missiezending tekst",
+  "level": "main",
+  "namefield": "titel",
+  "fields": [
+    {
+      "key": "titel",
+      "title": "Titel",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "tekst",
+      "title": "Tekst",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "annotatie",
+      "title": "Annotatie",
+      "type": "form",
+      "repeater": true,
+      "subname": "anno",
+      "contents_key": "tekstannotatie",
+      "widget": "standard"
+    }
+  ]
+}

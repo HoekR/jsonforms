@@ -1,0 +1,35 @@
+{
+  "formkey": "autopsie_inventaris",
+  "formtitle": "autopsie_inventaris",
+  "level": "secundair",
+  "namefield": null,
+  "fields": [
+    {
+      "key": "inventarisomschrijving",
+      "title": "Inventarisomschrijving(en)",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "anker",
+      "title": "htmlanker-naam",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "omschrijving",
+      "title": "Tekst",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    }
+  ]
+}

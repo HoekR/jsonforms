@@ -1,0 +1,1899 @@
+{
+  "emigratie_typering_archiefvormer_persoon": {
+    "key": "emigratie_typering_archiefvormer_persoon",
+    "name": "Emigratie: typering archiefvormer - persoon",
+    "sort_order": "asdefined",
+    "items": [
+      {
+        "const": "adviseur",
+        "title": "adviseur",
+        "use": true
+      },
+      {
+        "const": "beleidsambtenaar",
+        "title": "beleidsambtenaar",
+        "use": true
+      },
+      {
+        "const": "bestuurder",
+        "title": "bestuurder",
+        "use": true
+      },
+      {
+        "const": "diplomaat",
+        "title": "diplomaat",
+        "use": true
+      },
+      {
+        "const": "emigrant",
+        "title": "emigrant",
+        "use": true
+      },
+      {
+        "const": "emigratieconsulent",
+        "title": "emigratieconsulent",
+        "use": true
+      },
+      {
+        "const": "maatschappelijk_werker",
+        "title": "maatschappelijk werker",
+        "use": true
+      },
+      {
+        "const": "minister",
+        "title": "minister",
+        "use": true
+      },
+      {
+        "const": "ondernemer",
+        "title": "ondernemer",
+        "use": true
+      },
+      {
+        "const": "politicus",
+        "title": "politicus",
+        "use": true
+      },
+      {
+        "const": "publicist",
+        "title": "publicist",
+        "use": true
+      },
+      {
+        "const": "technisch_attache",
+        "title": "technisch attaché",
+        "use": true
+      },
+      {
+        "const": "vakbondsleider",
+        "title": "vakbondsleider",
+        "use": true
+      },
+      {
+        "const": "wetenschappelijk_onderzoeker",
+        "title": "wetenschappelijk onderzoeker",
+        "use": true
+      },
+      {
+        "const": "zielzorger",
+        "title": "zielzorger",
+        "use": true
+      }
+    ]
+  },
+  "emigratie_wettenned": {
+    "key": "emigratie_wettenned",
+    "name": "emigratie wetten Nederland",
+    "sort_order": "asdefined",
+    "items": [
+      {
+        "const": "1909_schepenwet",
+        "title": "1909 Schepenwet, Stb.no. 219",
+        "use": true
+      },
+      {
+        "const": "1930_arbeidsbemiddelingswet",
+        "title": "1930 Arbeidsbemiddelingswet, Stb.no. 433",
+        "use": true
+      },
+      {
+        "const": "1936_landverhuizingswet",
+        "title": "1936 Landverhuizingswet, Stb.no. 804",
+        "use": true
+      },
+      {
+        "const": "1945_deviezenbesluit",
+        "title": "1945 Deviezenbesluit 1945",
+        "use": true
+      },
+      {
+        "const": "1951_wetleningholambra",
+        "title": "1951 Wet lening Holambra, Stb.no. 282",
+        "use": true
+      },
+      {
+        "const": "1951_goedkeuringswetemigratieovereenkomstbrazilie",
+        "title": "1951 Goedkeuringswet emigratieovereenkomst Brazilië , Stb.no. 500",
+        "use": true
+      },
+      {
+        "const": "1952_wetopdeorganenvoordeemigratie",
+        "title": "1952 Wet op de organen voor de emigratie, Stb.no. 279",
+        "use": true
+      },
+      {
+        "const": "1952_besluitvertegenwoordigingorganisatiesinraadvoordeemigratie",
+        "title": "1952 Besluit vertegenwoordiging organisaties in Raad voor de Emigratie, Stb.no. 424",
+        "use": true
+      },
+      {
+        "const": "1953_besluitopheffingstermijnstichtinglandverhuizingnederland",
+        "title": "1953 Besluit opheffingstermijn Stichting Landverhuizing Nederland",
+        "use": true
+      },
+      {
+        "const": "1954_besluitemigratiebestuurerkenningaanmeldingsorgaan",
+        "title": "1954 Besluit Emigratiebestuur erkenning aanmeldingsorgaan",
+        "use": true
+      },
+      {
+        "const": "1954_besluitjaarlijksevergoedingnietopenbaaraanmeldingsorgaan",
+        "title": "1954 Besluit jaarlijkse vergoeding niet-openbaar aanmeldingsorgaan, Stb.no. 468",
+        "use": true
+      },
+      {
+        "const": "1954_deviezenbeschikkingemigratie",
+        "title": "1954 Deviezenbeschikking Emigratie 1954",
+        "use": true
+      },
+      {
+        "const": "1955_besluitfinancieelbeheeremigratiebestuur",
+        "title": "1955 Besluit Financieel Beheer Emigratiebestuur, Stb.no. 446",
+        "use": true
+      },
+      {
+        "const": "1955_tegemoetkomingaanloopkosten",
+        "title": "1955 Tegemoetkoming aanloopkosten",
+        "use": true
+      },
+      {
+        "const": "1956_emigratiebijslagregeling",
+        "title": "1956 Emigratiebijslagregeling",
+        "use": true
+      },
+      {
+        "const": "1956_besluitvergoedingerkendeaanmeldingsorganen",
+        "title": "1956 Besluit vergoeding erkende aanmeldingsorganen, Stb.no. 303",
+        "use": true
+      },
+      {
+        "const": "1956_besluitvervangingkbs",
+        "title": "1956 Besluit vervanging KB's  Stb. 1954, 468 en Stb 1956, no. 303, Stb. 496 (Rijksbijdrage)",
+        "use": true
+      },
+      {
+        "const": "1957_besluitwijzigingkb",
+        "title": "1957 Besluit wijziging KB 21 juli 1952, Stb. 1952, no. 424, iz vertegenwoordiging van organisaties in de Raad voor de Emigratie, Stb. 1957, no. 194",
+        "use": true
+      },
+      {
+        "const": "1959_wetleningdvelopmentloanfundwoningbouwemigrantenaustralie",
+        "title": "1959 Wet Lening Development Loan Fund woningbouw emigranten Australië, Stb.no. 95",
+        "use": true
+      },
+      {
+        "const": "1959_besluitvervangingstb",
+        "title": "1959 Besluit vervanging Stb. 1956, no. 496 en Stb. 1957, no. 398, Stb. 92 (Rijksbijdrage)",
+        "use": true
+      },
+      {
+        "const": "1960_bsluitkredietverleningnedwoningbouwverenigingeninaustralie",
+        "title": "1960 Besluit kredietverlening Ned. woningbouwverenigingen in Australië, Stb.no. 235",
+        "use": true
+      },
+      {
+        "const": "1964_besluitregelingrijksbijdragemaatschappelijkeemigratieorganisaties",
+        "title": "1964 Besluit regeling Rijksbijdrage maatschappelijke emigratieorganisaties, Stb.no. 68",
+        "use": true
+      },
+      {
+        "const": "1967_emigratiewet",
+        "title": "1967 Emigratiewet, Stb.no. 78",
+        "use": true
+      },
+      {
+        "const": "1967_besluitvaststellingvaneenalgemenemaatregelvanbestuur",
+        "title": "1967 Besluit vaststelling van een algemene maatregel van bestuur als bedoeld in artikel 8. lid 3 van de Emigratiewet (Stb. 1967, no. 659), Stb. 1967, no. 660",
+        "use": true
+      }
+    ]
+  },
+  "emigratie_typering_archiefvormer_taken": {
+    "key": "emigratie_typering_archiefvormer_taken",
+    "name": "Emigratie: typering archiefvormer - taken",
+    "sort_order": "asdefined",
+    "items": [
+      {
+        "const": "advisering",
+        "title": "advisering",
+        "use": true
+      },
+      {
+        "const": "beheer_fondsen",
+        "title": "beheer fondsen",
+        "use": true
+      },
+      {
+        "const": "beleid",
+        "title": "beleid",
+        "use": true
+      },
+      {
+        "const": "emigrantennazorg",
+        "title": "emigrantennazorg",
+        "use": true
+      },
+      {
+        "const": "emigrantenvoorbereiding",
+        "title": "emigrantenvoorbereiding",
+        "use": true
+      },
+      {
+        "const": "lobbywerk",
+        "title": "lobbywerk",
+        "use": true
+      },
+      {
+        "const": "onderzoek",
+        "title": "onderzoek / onderwijs",
+        "use": true
+      },
+      {
+        "const": "politiek_bedrijven",
+        "title": "politiek bedrijven",
+        "use": true
+      },
+      {
+        "const": "beeldvorming",
+        "title": "beeldvorming (media)",
+        "use": true
+      },
+      {
+        "const": "repatriering",
+        "title": "repatriëring",
+        "use": true
+      },
+      {
+        "const": "subsidiering",
+        "title": "subsidiëring / kredietverlening",
+        "use": true
+      },
+      {
+        "const": "uitvoering",
+        "title": "uitvoering",
+        "use": true
+      },
+      {
+        "const": "voorlichting",
+        "title": "voorlichting algemeen",
+        "use": true
+      },
+      {
+        "const": "vervoeren",
+        "title": "vervoeren",
+        "use": true
+      },
+      {
+        "const": "verzekeren",
+        "title": "verzekeren",
+        "use": true
+      },
+      {
+        "const": "screenen",
+        "title": "screenen (antecedentenonderzoek)",
+        "use": true
+      },
+      {
+        "const": "zielzorg",
+        "title": "zielzorg",
+        "use": true
+      },
+      {
+        "const": "huisvesting",
+        "title": "huisvesting",
+        "use": true
+      },
+      {
+        "const": "gezondheidszorg",
+        "title": "gezondheidszorg",
+        "use": true
+      },
+      {
+        "const": "vorming",
+        "title": "vorming (algemeen)",
+        "use": true
+      }
+    ]
+  },
+  "emigratie_wettenbilateraal": {
+    "key": "emigratie_wettenbilateraal",
+    "name": "emigratie wetten Bilateraal",
+    "sort_order": "asdefined",
+    "items": [
+      {
+        "const": "1938_migratieovereenkomstmetargentinie",
+        "title": "1938 Migratieovereenkomst met Argentinië",
+        "use": true
+      },
+      {
+        "const": "1946_migratieovereenkomstmetaustralie",
+        "title": "1946 (onofficiële) Migratieovereenkomst met Australië",
+        "use": true
+      },
+      {
+        "const": "1948_arbeidsverdragnederlandfrankrijk",
+        "title": "1948 Arbeidsverdrag Nederland-Frankrijk",
+        "use": true
+      },
+      {
+        "const": "1949_vestigingsverdragboerennederlandfrankrijk",
+        "title": "1949 Vestigingsverdrag boeren Nederland-Frankrijk",
+        "use": true
+      },
+      {
+        "const": "1949_migratieprotocolnederlandargentinie",
+        "title": "1949 Migratieprotocol Nederland-Argentinië",
+        "use": true
+      },
+      {
+        "const": "1950_verdragnederlandfrankrijkinzakesocialezekerheid",
+        "title": "1950 Verdrag Nederland-Frankrijk inzake sociale zekerheid",
+        "use": true
+      },
+      {
+        "const": "1950_migratieovereenkomstnederlandnieuwzeeland",
+        "title": "1950 Migratieovereenkomst Nederland-Nieuw-Zeeland",
+        "use": true
+      },
+      {
+        "const": "1950_migratieovereenkomstnederlandbrazilie",
+        "title": "1950 Migratieovereenkomst Nederland-Brazilië",
+        "use": true
+      },
+      {
+        "const": "1951_migratieovereenkomstnederlandaustralie",
+        "title": "1951 Migratieovereenkomst Nederland-Australië",
+        "use": true
+      },
+      {
+        "const": "1952_migratieovereenkomstnederlandnieuwzeeland",
+        "title": "1952 Migratieovereenkomst Nederland-Nieuw-Zeeland (herbevestiging 1950)",
+        "use": true
+      },
+      {
+        "const": "1954_vestigingtandartsennederlandmonaco",
+        "title": "1954 Vestiging tandartsen Nederland-Monaco",
+        "use": true
+      },
+      {
+        "const": "1954_handelsovereenkomstnederlandargentinie",
+        "title": "1954 Handelsovereenkomst Nederland-Argentinië (verwijzing naar 1949)",
+        "use": true
+      },
+      {
+        "const": "1955_migratieovereenkomstrhodesiaennyasaland",
+        "title": "1955 Migratieovereenkomst Rhodesia en Nyasaland",
+        "use": true
+      },
+      {
+        "const": "1956_migratieovereenkomstnederlandaustralie",
+        "title": "1956 Migratieovereenkomst Nederland-Australië (vervanging 1951)",
+        "use": true
+      },
+      {
+        "const": "1962_migratieovereenkomstnederlandchili",
+        "title": "1962 Migratieovereenkomst Nederland-Chili",
+        "use": true
+      },
+      {
+        "const": "1965_migratieovereenkomstnederlandaustralie",
+        "title": "1965 Migratieovereenkomst Nederland-Australië (vervanging 1956)",
+        "use": true
+      },
+      {
+        "const": "1947_verdraginzakesocialeverzekeringnederlandbelgie",
+        "title": "1947 Verdrag inzake sociale verzekering Nederland-België",
+        "use": true
+      },
+      {
+        "const": "1948_arbeidsverdragnederlandfrankrijk",
+        "title": "1948 Arbeidsverdrag Nederland-Frankrijk",
+        "use": true
+      },
+      {
+        "const": "1950_verdraginzakesocialezekerheidnederlandfrankrijk",
+        "title": "1950 Verdrag inzake sociale zekerheid Nederland-Frankrijk",
+        "use": true
+      },
+      {
+        "const": "1950_verdraginzakesocialezekerheidnederlandluxemburg",
+        "title": "1950 Verdrag inzake sociale zekerheid Nederland-Luxemburg",
+        "use": true
+      },
+      {
+        "const": "1951_verdraginzakesocialeverzekeringnederlandduitsland",
+        "title": "1951 Verdrag inzake sociale verzekering Nederland-Duitsland",
+        "use": true
+      },
+      {
+        "const": "1952_verdraginzakesocialezekerheidnederlanditalie",
+        "title": "1952 Verdrag inzake sociale zekerheid Nederland-Italië",
+        "use": true
+      },
+      {
+        "const": "1954_verdraginzakesocialezekerheidnederlandgrootbrittannie",
+        "title": "1954 Verdrag inzake sociale zekerheid Nederland-Groot-Brittannië",
+        "use": true
+      },
+      {
+        "const": "1954_verdraginzakewerkloosheidsverzekeringnederlandduitsland",
+        "title": "1954 Verdrag inzake werkloosheidsverzekering Nederland-Duitsland",
+        "use": true
+      },
+      {
+        "const": "1956_verdraginzakesocialeverzekeringnederlandjoegoslavie",
+        "title": "1956 Verdrag inzake sociale verzekering Nederland-Joegoslavië",
+        "use": true
+      },
+      {
+        "const": "1958_verdraginzakesocialezekerheidnederlandzwitserland",
+        "title": "1958 Verdrag inzake sociale zekerheid Nederland-Zwitserland",
+        "use": true
+      },
+      {
+        "const": "1962_verdraginzakesocialezekerheidnederlandspanje",
+        "title": "1962 Verdrag inzake sociale zekerheid Nederland-Spanje",
+        "use": true
+      },
+      {
+        "const": "1963_verdraginzakepensioenennederlandisrael",
+        "title": "1963 Verdrag inzake pensioenen Nederland-Israël",
+        "use": true
+      },
+      {
+        "const": "1966_verdraginzakesocialezekerheidnederlandturkije",
+        "title": "1966 Verdrag inzake sociale zekerheid Nederland-Turkije",
+        "use": true
+      },
+      {
+        "const": "1966_verdraginzakesocialezekerheidnederlandgriekenland",
+        "title": "1966 Verdrag inzake sociale zekerheid Nederland-Griekenland",
+        "use": true
+      },
+      {
+        "const": "1966_verdraginzakesocialezekerheidnederlandfrankrijkpolen",
+        "title": "1966 Verdrag inzake sociale zekerheid Nederland-Frankrijk-Polen",
+        "use": true
+      },
+      {
+        "const": "1966_verdraginzakesocialezekerheidnederlandportugal",
+        "title": "1966 Verdrag inzake sociale zekerheid Nederland-Portugal",
+        "use": true
+      }
+    ]
+  },
+  "emigratie_typering_archiefvormer_instelling": {
+    "key": "emigratie_typering_archiefvormer_instelling",
+    "name": "Emigratie: typering archiefvormer - instelling",
+    "sort_order": "asdefined",
+    "items": [
+      {
+        "const": "adviesorgaan",
+        "title": "adviesorgaan",
+        "use": true
+      },
+      {
+        "const": "emigratiecentrale",
+        "title": "emigratiecentrale / emigratieorganisatie",
+        "use": true
+      },
+      {
+        "const": "internationale_organisatie",
+        "title": "internationale organisatie",
+        "use": true
+      },
+      {
+        "const": "kerkelijke_organisatie",
+        "title": "kerkelijke organisatie",
+        "use": true
+      },
+      {
+        "const": "landbouworganisatie",
+        "title": "landbouworganisatie",
+        "use": true
+      },
+      {
+        "const": "media",
+        "title": "media",
+        "use": true
+      },
+      {
+        "const": "onderzoeksinstelling",
+        "title": "onderzoeksinstelling / onderwijsinstelling",
+        "use": true
+      },
+      {
+        "const": "onderneming",
+        "title": "onderneming",
+        "use": true
+      },
+      {
+        "const": "overheid_nationaal",
+        "title": "overheid, nationaal",
+        "use": true
+      },
+      {
+        "const": "overheid_regionaal",
+        "title": "overheid, regionaal",
+        "use": true
+      },
+      {
+        "const": "overheid_lokaal",
+        "title": "overheid, (boven)lokaal",
+        "use": true
+      },
+      {
+        "const": "politieke_partij",
+        "title": "politieke partij",
+        "use": true
+      },
+      {
+        "const": "vereniging_emigranten",
+        "title": "vereniging van emigranten",
+        "use": true
+      },
+      {
+        "const": "vereniging_achterblijvenden",
+        "title": "vereniging van achterblijvenden",
+        "use": true
+      },
+      {
+        "const": "vrouwenorganisatie",
+        "title": "vrouwenorganisatie",
+        "use": true
+      },
+      {
+        "const": "werkgeversorganisatie",
+        "title": "werkgeversorganisatie",
+        "use": true
+      },
+      {
+        "const": "werknemersorganisatie",
+        "title": "werknemersorganisatie",
+        "use": true
+      },
+      {
+        "const": "zelfstandig_bestuursorgaan",
+        "title": "zelfstandig bestuursorgaan",
+        "use": true
+      },
+      {
+        "const": "belangenorganisatie_overig",
+        "title": "belangenorganisatie overig",
+        "use": true
+      }
+    ]
+  },
+  "emigratie_wettenmultilateraal": {
+    "key": "emigratie_wettenmultilateraal",
+    "name": "emigratie wetten Multilateraal",
+    "sort_order": "asdefined",
+    "items": [
+      {
+        "const": "1939_ilo_conventionno66",
+        "title": "1939 ILO, Convention no. 66 inzake Arbeidsmigratie",
+        "use": true
+      },
+      {
+        "const": "1948_1949_verdragvanbrussel",
+        "title": "1948-1949 Verdrag van Brussel, coördinatie sociale zekerheid",
+        "use": true
+      },
+      {
+        "const": "1949_iloherzieningconventionno97",
+        "title": "1949 ILO, Herziening Convention no. 97 inzake Arbeidsmigratie (herzien)",
+        "use": true
+      },
+      {
+        "const": "1949_ilorecommendationno86",
+        "title": "1949 ILO, Recommendation no. 86 inzake Arbeidsmigratie (herzien)",
+        "use": true
+      },
+      {
+        "const": "1951_egks_oprichtingsverdrag",
+        "title": "1951 EGKS, Oprichtingsverdrag",
+        "use": true
+      },
+      {
+        "const": "1953_icemstatuutintergouvernementelecommissievooreuropesemigratie",
+        "title": "1953 ICEM, Statuut Intergouvernementele Commissie voor Europese Migratie",
+        "use": true
+      },
+      {
+        "const": "1955_europeesvestigingsverdrag",
+        "title": "1955 Raad van Europa, Europees Vestigingsverdrag",
+        "use": true
+      },
+      {
+        "const": "1956_beneluxarbeidsverdrag",
+        "title": "1956 Benelux, Arbeidsverdrag",
+        "use": true
+      },
+      {
+        "const": "1957_eeg_oprichtingsverdrag",
+        "title": "1957 EEG, Oprichtingsverdrag",
+        "use": true
+      },
+      {
+        "const": "1957_iloverdragvereenvoudigingverdragno21",
+        "title": "1957 ILO, Verdrag vereenvoudiging Convention no. 21, 1926 inspectie emigrantenschepen",
+        "use": true
+      },
+      {
+        "const": "1957_iloegkseuropeesverdragsocialezekerheidmigrerendewerknemers",
+        "title": "1957 ILO/EGKS, Europees Verdrag sociale zekerheid migrerende werknemers",
+        "use": true
+      },
+      {
+        "const": "1957_councilofeurope8eurconventionmovementofpersonsbetweenmemberstates",
+        "title": "1957 Raad van Europa, Europees Verdrag personenverkeer tussen lidstaten",
+        "use": true
+      },
+      {
+        "const": "1958_eegverordeningno3_4socialezekerheidvanmigrerendewerknemers",
+        "title": "1958 EEG, Verordening no. 3-4: sociale zekerheid van migrerende werknemers",
+        "use": true
+      },
+      {
+        "const": "1961_eegverordeningno15vrijverkeerwerknemerseeg",
+        "title": "1961 EEG, Verordening no. 15: Vrij verkeer werknemers EEG",
+        "use": true
+      },
+      {
+        "const": "1962_unitednationsconventionno118equalityoftreatmentinsocialsecurity",
+        "title": "1962 United Nations/ILO, Convention no. 118 equality of treatment in social security",
+        "use": true
+      },
+      {
+        "const": "1964_europesecodeizsocialezekerheid",
+        "title": "1964 Raad van Europa, Europese Code inzake Sociale Zekerheid",
+        "use": true
+      }
+    ]
+  },
+  "emigratie_land_herkomst": {
+    "key": "emigratie_land_herkomst",
+    "name": "Emigratie: land van herkomst archiefvormer",
+    "sort_order": "asdefined",
+    "items": [
+      {
+        "const": "australie",
+        "title": "Australie",
+        "use": true
+      },
+      {
+        "const": "canada",
+        "title": "Canada",
+        "use": true
+      },
+      {
+        "const": "nederland",
+        "title": "Nederland",
+        "use": true
+      },
+      {
+        "const": "internationale_samenstelling",
+        "title": "Internationale samenstelling",
+        "use": true
+      }
+    ]
+  },
+  "emigratie_kerkelijke_denominatie": {
+    "key": "emigratie_kerkelijke_denominatie",
+    "name": "kerkelijke denominatie",
+    "sort_order": "asdefined",
+    "items": [
+      {
+        "const": "katholiek",
+        "title": "katholiek",
+        "use": true
+      },
+      {
+        "const": "protestant",
+        "title": "protestant",
+        "use": true
+      },
+      {
+        "const": "overig",
+        "title": "overig",
+        "use": true
+      },
+      {
+        "const": "neutraal",
+        "title": "neutraal / geen",
+        "use": true
+      },
+      {
+        "const": "onbekend",
+        "title": "onbekend",
+        "use": true
+      }
+    ]
+  },
+  "emigratie_informatiedrager": {
+    "key": "emigratie_informatiedrager",
+    "name": "Informatiedrager",
+    "sort_order": "asdefined",
+    "items": [
+      {
+        "const": "papier",
+        "title": "papier",
+        "use": true
+      },
+      {
+        "const": "beeld",
+        "title": "beeld",
+        "use": true
+      },
+      {
+        "const": "digitaal",
+        "title": "digitaal",
+        "use": true
+      },
+      {
+        "const": "geluid",
+        "title": "geluid",
+        "use": true
+      }
+    ]
+  },
+  "emigratie_bestemmingslanden": {
+    "key": "emigratie_bestemmingslanden",
+    "name": "Emigratie Bestemmingslanden",
+    "sort_order": "alphawithpos",
+    "items": [
+      {
+        "const": "af",
+        "title": "Afghanistan",
+        "use": true
+      },
+      {
+        "const": "al",
+        "title": "Albanië",
+        "use": true
+      },
+      {
+        "const": "dz",
+        "title": "Algerije",
+        "use": true
+      },
+      {
+        "const": "ad",
+        "title": "Andorra",
+        "use": true
+      },
+      {
+        "const": "ao",
+        "title": "Angola",
+        "use": true
+      },
+      {
+        "const": "ag",
+        "title": "Antigua en Barbuda",
+        "use": true
+      },
+      {
+        "const": "ar",
+        "title": "Argentinië",
+        "use": true
+      },
+      {
+        "const": "am",
+        "title": "Armenië",
+        "use": true
+      },
+      {
+        "const": "au",
+        "title": "Australië",
+        "use": true
+      },
+      {
+        "const": "az",
+        "title": "Azerbeidzjan",
+        "use": true
+      },
+      {
+        "const": "bs",
+        "title": "Bahama's",
+        "use": true
+      },
+      {
+        "const": "bh",
+        "title": "Bahrein",
+        "use": true
+      },
+      {
+        "const": "bd",
+        "title": "Bangladesh",
+        "use": true
+      },
+      {
+        "const": "bb",
+        "title": "Barbados",
+        "use": true
+      },
+      {
+        "const": "by",
+        "title": "Belarus",
+        "use": true
+      },
+      {
+        "const": "be",
+        "title": "Belgie",
+        "use": true
+      },
+      {
+        "const": "bz",
+        "title": "Belize",
+        "use": true
+      },
+      {
+        "const": "bj",
+        "title": "Benin",
+        "use": true
+      },
+      {
+        "const": "bt",
+        "title": "Bhutan",
+        "use": true
+      },
+      {
+        "const": "bi",
+        "title": "Boeroendi",
+        "use": true
+      },
+      {
+        "const": "bo",
+        "title": "Bolivia",
+        "use": true
+      },
+      {
+        "const": "ba",
+        "title": "Bosnië-Herzegovina",
+        "use": true
+      },
+      {
+        "const": "bw",
+        "title": "Botswana",
+        "use": true
+      },
+      {
+        "const": "br",
+        "title": "Brazilië",
+        "use": true
+      },
+      {
+        "const": "bn",
+        "title": "Brunei",
+        "use": true
+      },
+      {
+        "const": "bg",
+        "title": "Bulgarije",
+        "use": true
+      },
+      {
+        "const": "bf",
+        "title": "Burkina Faso",
+        "use": true
+      },
+      {
+        "const": "kh",
+        "title": "Cambodja",
+        "use": true
+      },
+      {
+        "const": "ca",
+        "title": "Canada",
+        "use": true
+      },
+      {
+        "const": "cf",
+        "title": "Centraal-Afrikaanse Republiek",
+        "use": true
+      },
+      {
+        "const": "cl",
+        "title": "Chili",
+        "use": true
+      },
+      {
+        "const": "cn",
+        "title": "China",
+        "use": true
+      },
+      {
+        "const": "co",
+        "title": "Colombia",
+        "use": true
+      },
+      {
+        "const": "km",
+        "title": "Comoren",
+        "use": true
+      },
+      {
+        "const": "cg",
+        "title": "Congo (Brazzaville)",
+        "use": true
+      },
+      {
+        "const": "cd",
+        "title": "voorm. Belgisch Congo",
+        "use": true
+      },
+      {
+        "const": "cr",
+        "title": "Costa Rica",
+        "use": true
+      },
+      {
+        "const": "cu",
+        "title": "Cuba",
+        "use": true
+      },
+      {
+        "const": "cy",
+        "title": "Cyprus",
+        "use": true
+      },
+      {
+        "const": "dk",
+        "title": "Denemarken",
+        "use": true
+      },
+      {
+        "const": "dj",
+        "title": "Djibouti",
+        "use": true
+      },
+      {
+        "const": "dm",
+        "title": "Dominica",
+        "use": true
+      },
+      {
+        "const": "do",
+        "title": "Dominicaanse Republiek",
+        "use": true
+      },
+      {
+        "const": "de",
+        "title": "Duitsland",
+        "use": true
+      },
+      {
+        "const": "ec",
+        "title": "Ecuador",
+        "use": true
+      },
+      {
+        "const": "eg",
+        "title": "Egypte",
+        "use": true
+      },
+      {
+        "const": "sv",
+        "title": "El Salvador",
+        "use": true
+      },
+      {
+        "const": "cq",
+        "title": "Equatoriaal Guinea",
+        "use": true
+      },
+      {
+        "const": "er",
+        "title": "Eritrea",
+        "use": true
+      },
+      {
+        "const": "ee",
+        "title": "Estland",
+        "use": true
+      },
+      {
+        "const": "et",
+        "title": "Ethiopië",
+        "use": true
+      },
+      {
+        "const": "fj",
+        "title": "Fiji-eilanden",
+        "use": true
+      },
+      {
+        "const": "ph",
+        "title": "Filipijnen",
+        "use": true
+      },
+      {
+        "const": "fi",
+        "title": "Finland",
+        "use": true
+      },
+      {
+        "const": "fr",
+        "title": "Frankrijk",
+        "use": true
+      },
+      {
+        "const": "ga",
+        "title": "Gabon",
+        "use": true
+      },
+      {
+        "const": "gm",
+        "title": "Gambia",
+        "use": true
+      },
+      {
+        "const": "ge",
+        "title": "Georgië",
+        "use": true
+      },
+      {
+        "const": "gh",
+        "title": "Ghana",
+        "use": true
+      },
+      {
+        "const": "gd",
+        "title": "Grenada",
+        "use": true
+      },
+      {
+        "const": "el",
+        "title": "Griekenland",
+        "use": true
+      },
+      {
+        "const": "gt",
+        "title": "Guatemala",
+        "use": true
+      },
+      {
+        "const": "gn",
+        "title": "Guinee",
+        "use": true
+      },
+      {
+        "const": "gw",
+        "title": "Guinee Bissau",
+        "use": true
+      },
+      {
+        "const": "gy",
+        "title": "Guyana",
+        "use": true
+      },
+      {
+        "const": "ht",
+        "title": "Haïti",
+        "use": true
+      },
+      {
+        "const": "hn",
+        "title": "Honduras",
+        "use": true
+      },
+      {
+        "const": "hu",
+        "title": "Hongarije",
+        "use": true
+      },
+      {
+        "const": "ie",
+        "title": "Ierland",
+        "use": true
+      },
+      {
+        "const": "in",
+        "title": "India",
+        "use": true
+      },
+      {
+        "const": "id",
+        "title": "Indonesië",
+        "use": true
+      },
+      {
+        "const": "iq",
+        "title": "Irak",
+        "use": true
+      },
+      {
+        "const": "ir",
+        "title": "Iran",
+        "use": true
+      },
+      {
+        "const": "il",
+        "title": "Israël",
+        "use": true
+      },
+      {
+        "const": "it",
+        "title": "Italië",
+        "use": true
+      },
+      {
+        "const": "ci",
+        "title": "Ivoorkust",
+        "use": true
+      },
+      {
+        "const": "jm",
+        "title": "Jamaica",
+        "use": true
+      },
+      {
+        "const": "jp",
+        "title": "Japan",
+        "use": true
+      },
+      {
+        "const": "ye",
+        "title": "Jemen",
+        "use": true
+      },
+      {
+        "const": "jo",
+        "title": "Jordanië",
+        "use": true
+      },
+      {
+        "const": "cv",
+        "title": "Kaapverdië",
+        "use": true
+      },
+      {
+        "const": "cm",
+        "title": "Kameroen",
+        "use": true
+      },
+      {
+        "const": "kz",
+        "title": "Kazachstan",
+        "use": true
+      },
+      {
+        "const": "ke",
+        "title": "Kenia",
+        "use": true
+      },
+      {
+        "const": "kg",
+        "title": "Kirgizië of Kirgizstan",
+        "use": true
+      },
+      {
+        "const": "ki",
+        "title": "Kiribati",
+        "use": true
+      },
+      {
+        "const": "kw",
+        "title": "Koeweit",
+        "use": true
+      },
+      {
+        "const": "hr",
+        "title": "Kroatië",
+        "use": true
+      },
+      {
+        "const": "la",
+        "title": "Laos",
+        "use": true
+      },
+      {
+        "const": "ls",
+        "title": "Lesotho",
+        "use": true
+      },
+      {
+        "const": "lv",
+        "title": "Letland",
+        "use": true
+      },
+      {
+        "const": "lb",
+        "title": "Libanon",
+        "use": true
+      },
+      {
+        "const": "lr",
+        "title": "Liberia",
+        "use": true
+      },
+      {
+        "const": "ly",
+        "title": "Libië",
+        "use": true
+      },
+      {
+        "const": "li",
+        "title": "Liechtenstein",
+        "use": true
+      },
+      {
+        "const": "lt",
+        "title": "Litouwen",
+        "use": true
+      },
+      {
+        "const": "lu",
+        "title": "Luxemburg",
+        "use": true
+      },
+      {
+        "const": "mk",
+        "title": "Macedonië (Voormalig Joegoslavië)",
+        "use": true
+      },
+      {
+        "const": "mg",
+        "title": "Madagaskar",
+        "use": true
+      },
+      {
+        "const": "mw",
+        "title": "Nyasaland",
+        "use": true
+      },
+      {
+        "const": "mv",
+        "title": "Maldiven",
+        "use": true
+      },
+      {
+        "const": "my",
+        "title": "Maleisië",
+        "use": true
+      },
+      {
+        "const": "ml",
+        "title": "Mali",
+        "use": true
+      },
+      {
+        "const": "mt",
+        "title": "Malta",
+        "use": true
+      },
+      {
+        "const": "ma",
+        "title": "Marokko",
+        "use": true
+      },
+      {
+        "const": "mh",
+        "title": "Marshalleilanden",
+        "use": true
+      },
+      {
+        "const": "mr",
+        "title": "Mauritanië",
+        "use": true
+      },
+      {
+        "const": "mu",
+        "title": "Mauritius",
+        "use": true
+      },
+      {
+        "const": "mx",
+        "title": "Mexico",
+        "use": true
+      },
+      {
+        "const": "fm",
+        "title": "Micronesia",
+        "use": true
+      },
+      {
+        "const": "md",
+        "title": "Moldavië",
+        "use": true
+      },
+      {
+        "const": "mc",
+        "title": "Monaco",
+        "use": true
+      },
+      {
+        "const": "mn",
+        "title": "Mongolië",
+        "use": true
+      },
+      {
+        "const": "mz",
+        "title": "Mozambique",
+        "use": true
+      },
+      {
+        "const": "mm",
+        "title": "Birma",
+        "use": true
+      },
+      {
+        "const": "na",
+        "title": "Namibië",
+        "use": true
+      },
+      {
+        "const": "nr",
+        "title": "Nauru",
+        "use": true
+      },
+      {
+        "const": "nl",
+        "title": "Nederland",
+        "use": true
+      },
+      {
+        "const": "np",
+        "title": "Nepal",
+        "use": true
+      },
+      {
+        "const": "ni",
+        "title": "Nicaragua",
+        "use": true
+      },
+      {
+        "const": "nz",
+        "title": "Nieuw-Zeeland",
+        "use": true
+      },
+      {
+        "const": "ne",
+        "title": "Niger",
+        "use": true
+      },
+      {
+        "const": "ng",
+        "title": "Nigeria",
+        "use": true
+      },
+      {
+        "const": "kp",
+        "title": "Noord-Korea",
+        "use": true
+      },
+      {
+        "const": "no",
+        "title": "Noorwegen",
+        "use": true
+      },
+      {
+        "const": "ug",
+        "title": "Oeganda",
+        "use": true
+      },
+      {
+        "const": "ua",
+        "title": "Oekraïne",
+        "use": true
+      },
+      {
+        "const": "uz",
+        "title": "Oezbekistan",
+        "use": true
+      },
+      {
+        "const": "om",
+        "title": "Oman",
+        "use": true
+      },
+      {
+        "const": "tl",
+        "title": "Oost-Timor",
+        "use": true
+      },
+      {
+        "const": "at",
+        "title": "Oostenrijk",
+        "use": true
+      },
+      {
+        "const": "pk",
+        "title": "Pakistan",
+        "use": true
+      },
+      {
+        "const": "pw",
+        "title": "Palau",
+        "use": true
+      },
+      {
+        "const": "pa",
+        "title": "Panama",
+        "use": true
+      },
+      {
+        "const": "pg",
+        "title": "Papoea-Nieuw-Guinea",
+        "use": true
+      },
+      {
+        "const": "py",
+        "title": "Paraguay",
+        "use": true
+      },
+      {
+        "const": "pe",
+        "title": "Peru",
+        "use": true
+      },
+      {
+        "const": "pl",
+        "title": "Polen",
+        "use": true
+      },
+      {
+        "const": "pt",
+        "title": "Portugal",
+        "use": true
+      },
+      {
+        "const": "pr",
+        "title": "Puerto Rico",
+        "use": true
+      },
+      {
+        "const": "qa",
+        "title": "Qatar",
+        "use": true
+      },
+      {
+        "const": "ro",
+        "title": "Roemenië",
+        "use": true
+      },
+      {
+        "const": "ru",
+        "title": "Sovjet-Unie",
+        "use": true
+      },
+      {
+        "const": "rw",
+        "title": "Rwanda",
+        "use": true
+      },
+      {
+        "const": "kn",
+        "title": "Saint Kitts en Nevis",
+        "use": true
+      },
+      {
+        "const": "lc",
+        "title": "Saint Lucia",
+        "use": true
+      },
+      {
+        "const": "vc",
+        "title": "Saint Vincent en de Grenadines",
+        "use": true
+      },
+      {
+        "const": "sb",
+        "title": "Salomonseilanden",
+        "use": true
+      },
+      {
+        "const": "ws",
+        "title": "Samoa",
+        "use": true
+      },
+      {
+        "const": "sm",
+        "title": "San Marino",
+        "use": true
+      },
+      {
+        "const": "st",
+        "title": "Sao Tomé en Principe",
+        "use": true
+      },
+      {
+        "const": "sa",
+        "title": "Saoedi-Arabië",
+        "use": true
+      },
+      {
+        "const": "sn",
+        "title": "Senegal",
+        "use": true
+      },
+      {
+        "const": "yu",
+        "title": "Joegoslavië",
+        "use": true
+      },
+      {
+        "const": "sc",
+        "title": "Seychellen",
+        "use": true
+      },
+      {
+        "const": "sl",
+        "title": "Sierra Leone",
+        "use": true
+      },
+      {
+        "const": "sg",
+        "title": "Singapore",
+        "use": true
+      },
+      {
+        "const": "si",
+        "title": "Slovenië",
+        "use": true
+      },
+      {
+        "const": "sk",
+        "title": "Slowakije",
+        "use": true
+      },
+      {
+        "const": "sd",
+        "title": "Soedan",
+        "use": true
+      },
+      {
+        "const": "so",
+        "title": "Somalië",
+        "use": true
+      },
+      {
+        "const": "es",
+        "title": "Spanje",
+        "use": true
+      },
+      {
+        "const": "lk",
+        "title": "Sri Lanka",
+        "use": true
+      },
+      {
+        "const": "sr",
+        "title": "Suriname",
+        "use": true
+      },
+      {
+        "const": "sz",
+        "title": "Swaziland",
+        "use": true
+      },
+      {
+        "const": "sy",
+        "title": "Syrië",
+        "use": true
+      },
+      {
+        "const": "tj",
+        "title": "Tadzjikistan",
+        "use": true
+      },
+      {
+        "const": "tw",
+        "title": "Taiwan",
+        "use": true
+      },
+      {
+        "const": "tz",
+        "title": "Tanganyika",
+        "use": true
+      },
+      {
+        "const": "th",
+        "title": "Thailand",
+        "use": true
+      },
+      {
+        "const": "tg",
+        "title": "Togo",
+        "use": true
+      },
+      {
+        "const": "to",
+        "title": "Tonga",
+        "use": true
+      },
+      {
+        "const": "tt",
+        "title": "Trinidad en Tobago",
+        "use": true
+      },
+      {
+        "const": "td",
+        "title": "Tsjaad",
+        "use": true
+      },
+      {
+        "const": "cz",
+        "title": "Tsjechië",
+        "use": true
+      },
+      {
+        "const": "tn",
+        "title": "Tunesië",
+        "use": true
+      },
+      {
+        "const": "tm",
+        "title": "Turkmenistan",
+        "use": true
+      },
+      {
+        "const": "tr",
+        "title": "Turkije",
+        "use": true
+      },
+      {
+        "const": "tv",
+        "title": "Tuvalu",
+        "use": true
+      },
+      {
+        "const": "uk",
+        "title": "United Kingdom",
+        "use": true
+      },
+      {
+        "const": "uy",
+        "title": "Uruguay",
+        "use": true
+      },
+      {
+        "const": "vu",
+        "title": "Nieuwe Hebriden",
+        "use": true
+      },
+      {
+        "const": "va",
+        "title": "Vaticaanstad",
+        "use": true
+      },
+      {
+        "const": "ve",
+        "title": "Venezuela",
+        "use": true
+      },
+      {
+        "const": "ae",
+        "title": "Verenigde Arabische Emiraten",
+        "use": true
+      },
+      {
+        "const": "us",
+        "title": "Verenigde Staten",
+        "use": true
+      },
+      {
+        "const": "vn",
+        "title": "Vietnam",
+        "use": true
+      },
+      {
+        "const": "is",
+        "title": "IJsland",
+        "use": true
+      },
+      {
+        "const": "zm",
+        "title": "Rhodesië",
+        "use": true
+      },
+      {
+        "const": "zw",
+        "title": "Zimbabwe",
+        "use": true
+      },
+      {
+        "const": "za",
+        "title": "Zuid-Afrika",
+        "use": true
+      },
+      {
+        "const": "kr",
+        "title": "Korea",
+        "use": true
+      },
+      {
+        "const": "se",
+        "title": "Zweden",
+        "use": true
+      },
+      {
+        "const": "ch",
+        "title": "Zwitserland",
+        "use": true
+      },
+      {
+        "const": "eu",
+        "title": "Europa",
+        "use": true
+      },
+      {
+        "const": "sus",
+        "title": "Zuid-Amerika",
+        "use": true
+      },
+      {
+        "const": "sca",
+        "title": "Scandinavië",
+        "use": true
+      },
+      {
+        "const": "azi",
+        "title": "Azie",
+        "use": true
+      },
+      {
+        "const": "gus",
+        "title": "Golfstaten",
+        "use": true
+      },
+      {
+        "const": "boa",
+        "title": "Brits Oost-Afrika (Kenia)",
+        "use": true
+      },
+      {
+        "const": "bin",
+        "title": "Brits-Indië",
+        "use": true
+      },
+      {
+        "const": "nla",
+        "title": "Nederlandse Antillen (incl. Curaçao)",
+        "use": true
+      },
+      {
+        "const": "nng",
+        "title": "Nederlands Nieuw-Guinea",
+        "use": true
+      },
+      {
+        "const": "fnc",
+        "title": "Nieuw-Caledonië (Frans)",
+        "use": true
+      },
+      {
+        "const": "fgy",
+        "title": "Frans-Guyana",
+        "use": true
+      },
+      {
+        "const": "uns",
+        "title": "Ongespecificeerd",
+        "use": true
+      },
+      {
+        "const": "non",
+        "title": "geen",
+        "use": true
+      },
+      {
+        "const": "all",
+        "title": "alle",
+        "use": true
+      }
+    ]
+  },
+  "emigratie_doelgroepen": {
+    "key": "emigratie_doelgroepen",
+    "name": "Doelgroepen",
+    "sort_order": "asdefined",
+    "items": [
+      {
+        "const": "agrarische_sector",
+        "title": "agrarische sector",
+        "use": true
+      },
+      {
+        "const": "algemeen",
+        "title": "algemeen (Nederlandse / Australische / Canadese bevolking)",
+        "use": true
+      },
+      {
+        "const": "achterblijvende_familieleden",
+        "title": "achterblijvende familieleden",
+        "use": true
+      },
+      {
+        "const": "emigranten",
+        "title": "(aspirant-) emigranten (algemeen)",
+        "use": true
+      },
+      {
+        "const": "immigranten",
+        "title": "(aspirant-) immigranten (algemeen)",
+        "use": true
+      },
+      {
+        "const": "beleidsmakers",
+        "title": "beleidsmakers",
+        "use": true
+      },
+      {
+        "const": "displaced_persons",
+        "title": "displaced persons",
+        "use": true
+      },
+      {
+        "const": "niet_agrarische_sector",
+        "title": "niet-agrarische sector",
+        "use": true
+      },
+      {
+        "const": "remigranten",
+        "title": "remigranten",
+        "use": true
+      },
+      {
+        "const": "repatrianten",
+        "title": "repatrianten (Nederlands-Indië)",
+        "use": true
+      },
+      {
+        "const": "transmigranten",
+        "title": "transmigranten",
+        "use": true
+      },
+      {
+        "const": "uitvoerders",
+        "title": "uitvoerders",
+        "use": true
+      },
+      {
+        "const": "vrouwen",
+        "title": "vrouwen",
+        "use": true
+      },
+      {
+        "const": "werkgevers",
+        "title": "werkgevers",
+        "use": true
+      },
+      {
+        "const": "werknemers",
+        "title": "werknemers",
+        "use": true
+      },
+      {
+        "const": "zielzorgers",
+        "title": "zielzorgers",
+        "use": true
+      },
+      {
+        "const": "wetenschappers",
+        "title": "wetenschappers",
+        "use": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "formkey": "formdef",
+  "formtitle": "Formdef",
+  "level": "main",
+  "namefield": "formkey",
+  "fields": [
+    {
+      "key": "formkey",
+      "title": "Form key",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "formtitle",
+      "title": "Title",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "level",
+      "title": "Level",
+      "type": "choice",
+      "repeater": false,
+      "subname": null,
+      "contents_key": "formdef_level",
+      "widget": "standard"
+    },
+    {
+      "key": "namefield",
+      "title": "Name field",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    },
+    {
+      "key": "fields",
+      "title": "Fields",
+      "type": "form",
+      "repeater": true,
+      "subname": "field",
+      "contents_key": "formdef_field",
+      "widget": "standard"
+    }
+  ]
+}

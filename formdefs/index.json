@@ -1,0 +1,62 @@
+[
+  {
+    "formkey": "persoon",
+    "formtitle": "Persoon",
+    "level": "main",
+    "file": "formdefs/persoon.json"
+  },
+  {
+    "formkey": "instelling",
+    "formtitle": "Instelling",
+    "level": "main",
+    "file": "formdefs/instelling.json"
+  },
+  {
+    "formkey": "autopsie",
+    "formtitle": "Autopsie",
+    "level": "main",
+    "file": "formdefs/autopsie.json"
+  },
+  {
+    "formkey": "autopsie_inventaris",
+    "formtitle": "autopsie_inventaris",
+    "level": "secundair",
+    "file": "formdefs/autopsie_inventaris.json"
+  },
+  {
+    "formkey": "relation_form",
+    "formtitle": "Relation form",
+    "level": "secundair",
+    "file": "formdefs/relation_form.json"
+  },
+  {
+    "formkey": "emigratie_naam",
+    "formtitle": "emigratie naam",
+    "level": "secundair",
+    "file": "formdefs/emigratie_naam.json"
+  },
+  {
+    "formkey": "tekst",
+    "formtitle": "Missiezending tekst",
+    "level": "main",
+    "file": "formdefs/tekst.json"
+  },
+  {
+    "formkey": "tekstannotatie",
+    "formtitle": "Missiezending tekst annotatie",
+    "level": "secundair",
+    "file": "formdefs/tekstannotatie.json"
+  },
+  {
+    "formkey": "formdef",
+    "formtitle": "Formdef",
+    "level": "main",
+    "file": "formdefs/formdef.json"
+  },
+  {
+    "formkey": "formdef_field",
+    "formtitle": "Formdef field",
+    "level": "secundair",
+    "file": "formdefs/formdef_field.json"
+  }
+]

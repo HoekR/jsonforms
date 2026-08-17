@@ -1,0 +1,23 @@
+{
+  "formdef_level": {
+    "key": "formdef_level",
+    "name": "Formdef level",
+    "sort_order": "asdefined",
+    "items": [
+      { "const": "main", "title": "main", "use": true },
+      { "const": "secundair", "title": "secundair", "use": true }
+    ]
+  },
+  "formdef_field_type": {
+    "key": "formdef_field_type",
+    "name": "Formdef field type",
+    "sort_order": "asdefined",
+    "items": [
+      { "const": "text", "title": "text", "use": true },
+      { "const": "list", "title": "list (multi)", "use": true },
+      { "const": "choice", "title": "choice (one)", "use": true },
+      { "const": "form", "title": "form (nested)", "use": true },
+      { "const": "bool", "title": "bool", "use": true }
+    ]
+  }
+}

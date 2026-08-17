@@ -1,0 +1,17 @@
+{
+  "formkey": "emigratie_naam",
+  "formtitle": "emigratie naam",
+  "level": "secundair",
+  "namefield": null,
+  "fields": [
+    {
+      "key": "naam",
+      "title": "Naam",
+      "type": "text",
+      "repeater": false,
+      "subname": null,
+      "contents_key": null,
+      "widget": "standard"
+    }
+  ]
+}

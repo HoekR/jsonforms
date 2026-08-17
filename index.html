@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formdef — transcription first</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:opsz,ital,wght@6..72,0,400;6..72,0,500;6..72,0,600;6..72,1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="editor.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <h1>Formdef</h1>
+        <span>Transcription with islands</span>
+      </div>
+      <div class="tools">
+        <label class="inline">form
+          <select id="formkey"></select>
+        </label>
+        <button id="edit-formdef" type="button">Edit formdef</button>
+        <button id="new-formdef" type="button">New formdef</button>
+      </div>
+      <span class="spacer"></span>
+      <div class="actions">
+        <label class="file">
+          <button type="button">Load JSON</button>
+          <input id="load-file" type="file" accept="application/json" />
+        </label>
+        <button id="save-json" class="primary" type="button">Save JSON</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <section class="transcription">
+        <label class="kicker" for="text">Free text</label>
+        <textarea id="text" placeholder="Paste a transcription or draft. Select a span, then attach a field from the palette."></textarea>
+        <p class="hint">
+          Work is stored in this browser. JSON is an export: a <code>text</code> body
+          plus only the fields you attach. The rest of the formdef stays unused.
+        </p>
+      </section>
+
+      <aside class="sidebar">
+        <h2>Islands</h2>
+        <div id="islands"></div>
+
+        <h2>From the formdef</h2>
+        <p class="hint">
+          Select text in the transcription, then add an island.
+          A formdef is edited the same way.
+        </p>
+        <div id="palette" class="palette"></div>
+      </aside>
+    </div>
+
+    <section class="json-dock">
+      <div class="json-bar">
+        <p class="kicker" id="status">Stored in this browser</p>
+        <button id="toggle-json" class="quiet" type="button">Show JSON</button>
+      </div>
+      <pre id="json" class="json-out hidden"></pre>
+    </section>
+
+    <script src="bootstrap.js"></script>
+    <script src="migrate.js"></script>
+    <script src="db.js"></script>
+    <script src="editor.js"></script>
+  </body>
+</html>
