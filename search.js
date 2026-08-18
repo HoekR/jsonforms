@@ -155,11 +155,38 @@ function snippet(doc) {
 
 function findByRef(form, id) {
   if (!id) return null;
+  const needle = id.toLowerCase();
+  const formNeedle = (form || "").toLowerCase();
   const exact = searchState.documents.find(
-    (doc) => doc.obj_name === id && (!form || doc.form === form)
+    (doc) =>
+      String(doc.obj_name || "").toLowerCase() === needle &&
+      (!formNeedle || String(doc.form || "").toLowerCase() === formNeedle)
   );
   if (exact) return exact;
-  return searchState.documents.find((doc) => doc.obj_name === id) || null;
+  return (
+    searchState.documents.find((doc) => String(doc.obj_name || "").toLowerCase() === needle) ||
+    null
+  );
+}
+
+function relationHref(value) {
+  if (value && typeof value === "object") return String(value.relation || "");
+  return String(value || "");
+}
+
+function relationLabel(href) {
+  const raw = relationHref(href);
+  const parts = raw.split(":");
+  const id = parts.length > 1 ? parts.slice(1).join(":") : raw.split("/").pop();
+  return (id || raw).replace(/^\d+/, "").trim() || id || raw;
+}
+
+function isRelationList(value) {
+  if (!Array.isArray(value) || !value.length) return false;
+  return value.every((item) => {
+    if (typeof item === "string") return /\/data\/|^(ref|persoon|instelling):/i.test(item);
+    return item && typeof item === "object" && typeof item.relation === "string";
+  });
 }
 
 function bindMarkdownLinks(root) {
@@ -293,6 +320,14 @@ function renderDetail() {
       html += `</div>`;
     } else if (typeof doc[field.key] === "string") {
       html += `<div class="markdown-body">${markdownToHtml(doc[field.key])}</div>`;
+    } else if (isRelationList(doc[field.key])) {
+      const lines = doc[field.key]
+        .map((item) => {
+          const href = relationHref(item);
+          return `- [${relationLabel(href)}](${href})`;
+        })
+        .join("\n");
+      html += `<div class="markdown-body">${markdownToHtml(lines)}</div>`;
     } else {
       html += `<pre>${escapeHtml(JSON.stringify(doc[field.key], null, 2))}</pre>`;
     }

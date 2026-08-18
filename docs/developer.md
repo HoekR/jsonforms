@@ -27,7 +27,7 @@ Editorial use: [user.md](user.md). Formdefs, lists, and migration: [poweruser.md
 | `docs/schema/jsonforms.schema.json` | JSON Schema for those shapes |
 | `scripts/build_bootstrap.py` | pack formdefs + lists + draft → `bootstrap.js` |
 | `scripts/update_documents.py` | same migration rules for files on disk |
-| `scripts/convert_ingforms_xml.py` | IngForms XML zip → jsonforms documents in `converted/` (gitignored) |
+| `scripts/pack_corpus.py` | converted JSON folder → `formdef-corpus` for `search.html` |
 | `scripts/convert_emigratie_xml.py` | four Emigratie samples → `samples/*-full.json` |
 | `scripts/unpack_corpus.py` | corpus JSON → `formdefs/` + `published/` |
 | `scripts/build_search.py` | pack samples/published → `search-data.js` |

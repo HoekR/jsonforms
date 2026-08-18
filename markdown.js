@@ -17,9 +17,11 @@ function markdownIngforms(source) {
   text = text.replace(/##([^#\n]+)#([^#\n]+)##/g, (_, id, label) => {
     return `[${label.trim()}](ref:${id.trim()})`;
   });
-  text = text.replace(/(^|[^#])#([A-Za-z0-9][^#\n]{0,80}?)#/g, (match, pre, id) => {
-    if (id.startsWith(" ")) return match;
-    return `${pre}[${id}](ref:${id})`;
+  text = text.replace(/(^|[^#])#([A-Za-z0-9][^#\n]{0,120}?)#/g, (match, pre, id) => {
+    const ident = id.trim();
+    if (!ident) return match;
+    const label = ident.replace(/^\d+/, "").trim() || ident;
+    return `${pre}[${label}](ref:${ident})`;
   });
   return text;
 }

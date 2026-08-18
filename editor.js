@@ -334,19 +334,27 @@ function renderHeader() {
 function renderText() {
   const area = document.getElementById("text");
   const preview = document.getElementById("text-preview");
-  const toggle = document.getElementById("toggle-preview");
+  const editBtn = document.getElementById("mode-edit");
+  const previewBtn = document.getElementById("mode-preview");
   if (area.value !== (state.doc.text || "")) area.value = state.doc.text || "";
-  if (!preview || !toggle) return;
+  if (!preview || !editBtn || !previewBtn) return;
   if (state.previewOpen) {
-    preview.innerHTML = markdownToHtml(state.doc.text || "") || `<p class="hint">Nothing to preview.</p>`;
+    const html = typeof markdownToHtml === "function" ? markdownToHtml(state.doc.text || "") : "";
+    preview.innerHTML = html || `<p class="hint">Nothing to preview.</p>`;
     preview.classList.remove("hidden");
     area.classList.add("hidden");
-    toggle.textContent = "Edit";
   } else {
     preview.classList.add("hidden");
     area.classList.remove("hidden");
-    toggle.textContent = "Preview";
   }
+  editBtn.classList.toggle("on", !state.previewOpen);
+  previewBtn.classList.toggle("on", state.previewOpen);
+}
+
+function ensureEditing() {
+  if (!state.previewOpen) return;
+  state.previewOpen = false;
+  renderText();
 }
 
 function onIslandValue(key, value) {
@@ -586,6 +594,100 @@ function render() {
   renderJson();
 }
 
+function nextNoteId(text) {
+  let max = 0;
+  const re = /\[\^(\d+)\]/g;
+  let match;
+  while ((match = re.exec(text))) max = Math.max(max, Number(match[1]));
+  return String(max + 1);
+}
+
+function setTextValue(area, next, selectStart, selectEnd) {
+  area.value = next;
+  state.doc.text = next;
+  area.focus();
+  area.setSelectionRange(selectStart, selectEnd);
+  afterChange();
+}
+
+function wrapLink(hrefPlaceholder) {
+  ensureEditing();
+  const area = document.getElementById("text");
+  const start = area.selectionStart;
+  const end = area.selectionEnd;
+  const value = area.value;
+  const inner = value.slice(start, end) || "label";
+  const prefix = "[";
+  const suffix = `](${hrefPlaceholder})`;
+  const next = value.slice(0, start) + prefix + inner + suffix + value.slice(end);
+  const hrefStart = start + prefix.length + inner.length + 2;
+  if (value.slice(start, end)) {
+    setTextValue(area, next, hrefStart, hrefStart + hrefPlaceholder.length);
+  } else {
+    const innerStart = start + prefix.length;
+    setTextValue(area, next, innerStart, innerStart + inner.length);
+  }
+}
+
+function wrapSelection(prefix, suffix, empty) {
+  ensureEditing();
+  const area = document.getElementById("text");
+  const start = area.selectionStart;
+  const end = area.selectionEnd;
+  const value = area.value;
+  const selected = value.slice(start, end);
+  const inner = selected || empty || "";
+  const next = value.slice(0, start) + prefix + inner + suffix + value.slice(end);
+  const innerStart = start + prefix.length;
+  setTextValue(area, next, innerStart, innerStart + inner.length);
+}
+
+function prefixSelectedLines(mark) {
+  ensureEditing();
+  const area = document.getElementById("text");
+  const value = area.value;
+  let start = area.selectionStart;
+  let end = area.selectionEnd;
+  if (start === end) {
+    while (start > 0 && value[start - 1] !== "\n") start -= 1;
+    while (end < value.length && value[end] !== "\n") end += 1;
+  } else {
+    while (start > 0 && value[start - 1] !== "\n") start -= 1;
+    if (end > start && value[end - 1] === "\n") end -= 1;
+  }
+  const block = value.slice(start, end);
+  const nextBlock = block
+    .split("\n")
+    .map((line) => (line.startsWith(mark) ? line : mark + line))
+    .join("\n");
+  const next = value.slice(0, start) + nextBlock + value.slice(end);
+  setTextValue(area, next, start, start + nextBlock.length);
+}
+
+function insertNote() {
+  ensureEditing();
+  const area = document.getElementById("text");
+  const id = nextNoteId(area.value);
+  const mark = `[^${id}]`;
+  const start = area.selectionStart;
+  const value = area.value;
+  let next = value.slice(0, start) + mark + value.slice(area.selectionEnd);
+  if (!next.endsWith("\n")) next += "\n";
+  next += `\n[^${id}]: `;
+  setTextValue(area, next, next.length, next.length);
+}
+
+function applyMarkdown(kind) {
+  if (kind === "bold") wrapSelection("**", "**", "bold");
+  else if (kind === "italic") wrapSelection("*", "*", "italic");
+  else if (kind === "code") wrapSelection("`", "`", "code");
+  else if (kind === "link") wrapLink("https://");
+  else if (kind === "ref") wrapLink("ref:");
+  else if (kind === "heading") prefixSelectedLines("## ");
+  else if (kind === "list") prefixSelectedLines("- ");
+  else if (kind === "note") insertNote();
+}
+
 function bind() {
   document.getElementById("text").addEventListener("input", (event) => {
     state.doc.text = event.target.value;
@@ -600,8 +702,21 @@ function bind() {
     state.jsonOpen = !state.jsonOpen;
     renderJson();
   });
-  document.getElementById("toggle-preview").addEventListener("click", () => {
-    state.previewOpen = !state.previewOpen;
+  document.getElementById("md-toolbar").addEventListener("mousedown", (event) => {
+    if (event.target.closest("[data-md]")) event.preventDefault();
+  });
+  document.getElementById("md-toolbar").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-md]");
+    if (!button) return;
+    applyMarkdown(button.dataset.md);
+  });
+  document.getElementById("mode-edit").addEventListener("click", () => {
+    state.previewOpen = false;
+    renderText();
+    document.getElementById("text").focus();
+  });
+  document.getElementById("mode-preview").addEventListener("click", () => {
+    state.previewOpen = true;
     renderText();
   });
   document.getElementById("save-json").addEventListener("click", () => {

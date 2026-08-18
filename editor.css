@@ -189,12 +189,57 @@ label.inline select {
 
 .text-bar {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
-.text-bar .kicker { margin-bottom: 0.55rem; }
+.text-bar .kicker { margin-bottom: 0; }
+
+.md-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.md-toolbar button {
+  min-width: 1.85rem;
+  padding: 0.18rem 0.42rem;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  background: var(--paper);
+}
+
+.md-toolbar button strong,
+.md-toolbar button em,
+.md-toolbar button code {
+  font-size: 0.82rem;
+  pointer-events: none;
+}
+
+.mode-toggle {
+  display: flex;
+  gap: 0;
+}
+
+.mode-toggle button {
+  font-size: 0.78rem;
+  padding: 0.18rem 0.65rem;
+  background: var(--paper);
+}
+
+.mode-toggle button + button {
+  border-left-width: 0;
+}
+
+.mode-toggle button.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
 
 #text {
   flex: 1;
@@ -413,6 +458,30 @@ label.inline select {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.35rem 0.7rem 0.35rem 1.1rem;
+}
+
+.footer-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.json-dock .footer-tools button {
+  background: transparent;
+  border-color: #5c5348;
+  color: #e6dcc8;
+}
+
+.json-dock .footer-tools button:hover,
+.json-dock .footer-tools button:focus-visible {
+  border-color: #c4b49a;
+  color: #fffaf1;
+}
+
+.json-dock button.quiet {
+  color: #c4b49a;
+  border-color: transparent;
 }
 
 .json-dock .kicker {

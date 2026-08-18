@@ -185,7 +185,7 @@ The `relation` string is an IngForms path. The editor does not resolve it. Inlin
 ]
 ```
 
-IngForms wiki-style marks inside strings (`##id# label##`) are rendered as internal links. Prefer Markdown `[label](ref:id)` in new text.
+IngForms wiki-style marks (`##01PvdA# Partij van de Arbeid##`, `#01Raad voor de Emigratie#`) are converted to Markdown `[label](ref:id)` on import. Relation paths `/data/.../01PvdA` become `instelling:01PvdA` (or `persoon:…`). Preview still accepts leftover wiki.
 
 ## 6. Formdef document
 

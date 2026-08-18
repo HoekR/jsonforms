@@ -79,6 +79,47 @@ def leaf_text(el: ET.Element | None) -> str:
     return html.unescape(raw).strip()
 
 
+def wiki_to_markdown(text: str) -> str:
+    """Turn IngForms wiki marks into Markdown record links."""
+
+    def labeled(match: re.Match) -> str:
+        ident = match.group(1).strip()
+        label = match.group(2).strip()
+        return f"[{label}](ref:{ident})"
+
+    def bare(match: re.Match) -> str:
+        ident = match.group(2).strip()
+        label = re.sub(r"^\d+", "", ident).strip() or ident
+        return f"{match.group(1)}[{label}](ref:{ident})"
+
+    text = re.sub(r"##([^#\n]+)#([^#\n]+)##", labeled, text)
+    text = re.sub(r"(^|[^#])#([A-Za-z0-9][^#\n]{0,120}?)#", bare, text)
+    return text
+
+
+def relation_ref(path: str) -> str:
+    """IngForms /data/.../01PvdA → instelling:01PvdA (or ref:id)."""
+    raw = (path or "").strip()
+    if not raw:
+        return raw
+    if re.match(r"^(ref|persoon|instelling|autopsie|tekst):", raw, re.I):
+        return raw
+    raw = re.sub(r"^/+", "", raw)
+    raw = re.sub(r"^(data/)+", "", raw, flags=re.I)
+    parts = [part for part in raw.split("/") if part]
+    if not parts:
+        return path.strip()
+    obj = parts[-1]
+    folder = "/".join(parts[:-1]).lower()
+    if "personen" in folder:
+        form = "persoon"
+    elif "instellingen" in folder:
+        form = "instelling"
+    else:
+        form = ""
+    return f"{form}:{obj}" if form else f"ref:{obj}"
+
+
 def to_plain(value: str) -> str:
     if not value:
         return ""
@@ -88,6 +129,7 @@ def to_plain(value: str) -> str:
     text = HTML_TAG.sub("", text)
     text = html.unescape(text)
     text = text.replace("\xa0", " ")
+    text = wiki_to_markdown(text)
     text = re.sub(r"[ \t]+\n", "\n", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
@@ -309,15 +351,21 @@ def convert_nested(
                     child(el, field["key"]), field, catalog, project, data_path
                 )
                 if not is_empty(value):
+                    if field["key"] == "relation" and isinstance(value, str):
+                        value = relation_ref(value)
                     out[field["key"]] = value
             return out
         if len(nested["fields"]) == 1 and not list(el):
             key = nested["fields"][0]["key"]
             text = to_plain(leaf_text(el))
+            if key == "relation":
+                text = relation_ref(text)
             return {key: text} if text else {}
         if len(nested["fields"]) == 1:
             key = nested["fields"][0]["key"]
             text = to_plain(leaf_text(el))
+            if key == "relation":
+                text = relation_ref(text)
             return {key: text} if text else {}
     text = to_plain(leaf_text(el))
     return text if text else {}
@@ -400,6 +448,47 @@ def iter_data_xml(zf: zipfile.ZipFile, project: str | None):
         yield name, proj
 
 
+def rewrite_value(value):
+    if isinstance(value, str):
+        if re.match(r"^/?(data/)+", value, re.I):
+            return relation_ref(value)
+        return wiki_to_markdown(value)
+    if isinstance(value, list):
+        if value and all(isinstance(item, str) and re.match(r"^/?(data/)+", item, re.I) for item in value):
+            return [{"relation": relation_ref(item)} for item in value]
+        return [rewrite_value(item) for item in value]
+    if isinstance(value, dict):
+        if "relation" in value and isinstance(value["relation"], str):
+            out = {key: rewrite_value(item) for key, item in value.items() if key != "relation"}
+            out["relation"] = relation_ref(value["relation"])
+            return out
+        return {key: rewrite_value(item) for key, item in value.items()}
+    return value
+
+
+def rewrite_document(doc: dict) -> dict:
+    return {key: rewrite_value(value) for key, value in doc.items()}
+
+
+def rewrite_folder(folder: Path, indent: int | None) -> int:
+    written = 0
+    for path in sorted(folder.rglob("*.json")):
+        if path.name.startswith("_"):
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict) or not data.get("form"):
+            continue
+        path.write_text(
+            json.dumps(rewrite_document(data), indent=indent, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        written += 1
+        if written % 2000 == 0:
+            print(f"… {written} rewritten", file=sys.stderr)
+    print(f"rewrote {written} documents in {folder}/", file=sys.stderr)
+    return 0 if written else 1
+
+
 def out_path(out_root: Path, zip_name: str) -> Path:
     rel = zip_name.split("content_repository/", 1)[-1]
     rel = os.path.splitext(rel)[0] + ".json"
@@ -408,13 +497,23 @@ def out_path(out_root: Path, zip_name: str) -> Path:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--zip", required=True, help="Path to content_repository.zip")
+    parser.add_argument("--zip", help="Path to content_repository.zip")
     parser.add_argument("--out", type=Path, default=ROOT / "converted")
     parser.add_argument("--project", help="Only this project (e.g. emigratie)")
     parser.add_argument("--limit", type=int, default=0, help="Max documents (0 = all)")
     parser.add_argument("--indent", action="store_true")
     parser.add_argument("--catalog", action="store_true", help="Also write formdefs and lists")
+    parser.add_argument(
+        "--rewrite",
+        type=Path,
+        help="Rewrite wiki marks and /data/ relations in already converted JSON",
+    )
     args = parser.parse_args(argv)
+
+    if args.rewrite:
+        return rewrite_folder(args.rewrite, 2 if args.indent else None)
+    if not args.zip:
+        raise SystemExit("--zip is required unless --rewrite is set")
 
     zf = zipfile.ZipFile(args.zip)
     catalog = Catalog()

@@ -13,14 +13,12 @@
     <header>
       <div class="brand">
         <h1>Formdef</h1>
-        <span>Transcription with islands</span>
+        <span>Trans-/Descriptions with islands</span>
       </div>
       <div class="tools">
         <label class="inline">form
           <select id="formkey"></select>
         </label>
-        <button id="edit-formdef" type="button">Edit formdef</button>
-        <button id="new-formdef" type="button">New formdef</button>
       </div>
       <span class="spacer"></span>
       <div class="actions">
@@ -38,7 +36,20 @@
       <section class="transcription">
         <div class="text-bar">
           <label class="kicker" for="text">Free text</label>
-          <button id="toggle-preview" class="quiet" type="button">Preview</button>
+          <div class="md-toolbar" id="md-toolbar" role="toolbar" aria-label="Markdown">
+            <button type="button" data-md="bold" title="Bold"><strong>B</strong></button>
+            <button type="button" data-md="italic" title="Italic"><em>I</em></button>
+            <button type="button" data-md="code" title="Inline code"><code>`</code></button>
+            <button type="button" data-md="link" title="Web link">link</button>
+            <button type="button" data-md="ref" title="Record reference">ref</button>
+            <button type="button" data-md="note" title="Explanatory note">note</button>
+            <button type="button" data-md="list" title="List">list</button>
+            <button type="button" data-md="heading" title="Heading">H</button>
+          </div>
+          <div class="mode-toggle" role="group" aria-label="Edit or preview">
+            <button type="button" id="mode-edit">Edit</button>
+            <button type="button" id="mode-preview">Preview</button>
+          </div>
         </div>
         <textarea id="text" placeholder="Paste a transcription or draft. Markdown is fine: [PvdA](instelling:01PvdA) or a note[^1]. Select a span, then attach a field from the palette.
 
@@ -66,7 +77,11 @@
     <section class="json-dock">
       <div class="json-bar">
         <p class="kicker" id="status">Stored in this browser</p>
-        <button id="toggle-json" class="quiet" type="button">Show JSON</button>
+        <div class="footer-tools">
+          <button id="edit-formdef" type="button">Edit formdef</button>
+          <button id="new-formdef" type="button">New formdef</button>
+          <button id="toggle-json" class="quiet" type="button">Show JSON</button>
+        </div>
       </div>
       <pre id="json" class="json-out hidden"></pre>
     </section>

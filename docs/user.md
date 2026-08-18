@@ -22,7 +22,8 @@ You can also open `index.html` directly. A local server is more reliable: the ed
 - **Right, Islands:** fields you have attached to this document.
 - **Right, From the formdef:** fields you *could* attach but have not yet.
 - **Top:** which form you are editing, load, save one file, and **Publish**.
-- **Bottom:** status. **Show JSON** opens a live preview; you do not need it for ordinary work.
+- **Left, above the text:** a Markdown toolbar (bold, link, record **ref**, **note**).
+- **Bottom:** status, **Edit formdef** / **New formdef**, and **Show JSON**.
 
 ## Write a transcription
 
@@ -34,7 +35,7 @@ Work is stored in this browser a fraction of a second after you stop typing. Rel
 
 ## Markdown (links and notes)
 
-The transcription is Markdown, not HTML. The JSON still stores the source you typed. **Preview** on the left shows how it will read.
+**Edit** and **Preview** sit at the right of the toolbar. Edit is the source; Preview is the rendered text. The toolbar inserts the same marks (select a span, then **B**, **ref**, **note**, …).
 
 ```markdown
 Hij zat in het bestuur van de [Partij van de Arbeid](instelling:01PvdA).
