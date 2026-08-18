@@ -24,6 +24,7 @@
       </div>
       <span class="spacer"></span>
       <div class="actions">
+        <a href="search.html">Search</a>
         <label class="file">
           <button type="button">Load JSON</button>
           <input id="load-file" type="file" accept="application/json" />
@@ -35,8 +36,14 @@
 
     <div class="layout">
       <section class="transcription">
-        <label class="kicker" for="text">Free text</label>
-        <textarea id="text" placeholder="Paste a transcription or draft. Select a span, then attach a field from the palette."></textarea>
+        <div class="text-bar">
+          <label class="kicker" for="text">Free text</label>
+          <button id="toggle-preview" class="quiet" type="button">Preview</button>
+        </div>
+        <textarea id="text" placeholder="Paste a transcription or draft. Markdown is fine: [PvdA](instelling:01PvdA) or a note[^1]. Select a span, then attach a field from the palette.
+
+[^1]: Notes go at the bottom."></textarea>
+        <div id="text-preview" class="text-preview markdown-body hidden"></div>
         <p class="hint">
           Work is stored in this browser. JSON is an export: a <code>text</code> body
           plus only the fields you attach. The rest of the formdef stays unused.
@@ -68,6 +75,7 @@
     <script src="migrate.js"></script>
     <script src="db.js"></script>
     <script src="publish.js"></script>
+    <script src="markdown.js"></script>
     <script src="editor.js"></script>
   </body>
 </html>

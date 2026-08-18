@@ -1,0 +1,151 @@
+.search-layout {
+  display: grid;
+  grid-template-columns: minmax(16rem, 18rem) minmax(0, 0.95fr) minmax(0, 1.15fr);
+  flex: 1;
+  min-height: 0;
+}
+
+.filters,
+.results-pane,
+.detail-pane {
+  overflow: auto;
+  padding: 1rem 1.15rem 2rem;
+}
+
+.filters {
+  border-right: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.detail-pane {
+  border-left: 1px solid var(--line);
+  background: var(--sheet);
+}
+
+.filters h2,
+.island-read h3 {
+  margin: 1.1rem 0 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.filters input[type="text"] {
+  width: 100%;
+  margin: 0.2rem 0 0.7rem;
+}
+
+.chips,
+#form-filter,
+#facets section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.chip {
+  font-size: 0.78rem;
+  padding: 0.18rem 0.5rem;
+  background: var(--sheet);
+}
+
+.chip.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.results-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.hit {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.hit h3 {
+  margin: 0.1rem 0 0.25rem;
+  font-family: Newsreader, Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.hit p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.hit.on {
+  background: var(--island);
+  margin-inline: -0.6rem;
+  padding-inline: 0.6rem;
+}
+
+#detail h2 {
+  margin: 0.2rem 0 0.8rem;
+  font-family: Newsreader, Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+#detail .body {
+  font-family: Newsreader, Georgia, serif;
+  font-size: 1.05rem;
+}
+
+#detail .markdown-body a.md-ref {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.18em;
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.island-read {
+  margin-top: 1rem;
+  padding-left: 0.65rem;
+  border-left: 3px solid var(--accent);
+}
+
+.island-read p,
+.island-read pre {
+  margin: 0.25rem 0 0;
+  white-space: pre-wrap;
+}
+
+mark {
+  background: #f0d3a8;
+  color: inherit;
+}
+
+header a {
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.75rem;
+  background: var(--sheet);
+}
+
+header a:hover {
+  border-color: var(--accent);
+}
+
+@media (max-width: 1100px) {
+  .search-layout {
+    grid-template-columns: 1fr;
+  }
+  .filters,
+  .detail-pane {
+    border: 0;
+    border-top: 1px solid var(--line);
+  }
+}

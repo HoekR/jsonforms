@@ -1,6 +1,6 @@
 # Power user guide
 
-This is for people who define forms, keep vocabularies, and move documents between the editor and disk. Editorial day-to-day use is in [user.md](user.md).
+This is for people who define forms, keep vocabularies, and move documents between the editor and disk. Editorial day-to-day use is in [user.md](user.md). The interchange contract (document, formdef, list, corpus) is [spec.md](spec.md).
 
 ## Document shape
 
@@ -183,10 +183,12 @@ Reload. Existing IndexedDB is **not** re-seeded. To pick up disk formdefs in a b
 
 ## Optional XML import
 
-A few Emigratie records can be pulled from the old `content_repository.zip` (not in this repo):
+IngForms XML lives in `content_repository.zip` (not in this repo). Convert to jsonforms documents (`form`, `text`, islands):
 
 ```bash
-python3 scripts/convert_emigratie_xml.py --zip /path/to/content_repository.zip
+python3 scripts/convert_ingforms_xml.py --zip /path/to/content_repository.zip
+python3 scripts/convert_ingforms_xml.py --zip … --project emigratie --indent
+python3 scripts/convert_emigratie_xml.py --zip …   # four samples/ → *-full.json
 ```
 
-Writes `samples/*-full.json`. Those files are fully structured IngForms dumps (`obj_name`, HTML snippets, …). They are not transcription-first until you reshape them (`form` + `text` + selected islands).
+Output of the full converter is `converted/` (gitignored). Formdefs in the zip are used when present; otherwise non-empty XML children become islands. `text` is filled from a transcription-like field when one exists.

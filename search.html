@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formdef — search</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:opsz,ital,wght@6..72,0,400;6..72,0,500;6..72,1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="editor.css" />
+    <link rel="stylesheet" href="search.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <h1>Formdef</h1>
+        <span>Search published records</span>
+      </div>
+      <span class="spacer"></span>
+      <div class="actions">
+        <a href="index.html">Editor</a>
+        <label class="file">
+          <button type="button">Load corpus</button>
+          <input id="load-corpus" type="file" accept="application/json" />
+        </label>
+      </div>
+    </header>
+
+    <div class="search-layout">
+      <aside class="filters">
+        <label class="kicker" for="q">Free text</label>
+        <input id="q" type="text" placeholder="Words or wildcards (emigr*)" />
+
+        <label class="kicker" for="name-filter">Name</label>
+        <input id="name-filter" type="text" placeholder="Exact-ish name" />
+
+        <h2>Form</h2>
+        <div id="form-filter" class="chips"></div>
+
+        <h2>Islands</h2>
+        <p class="hint">List and choice fields from the formdef. Click a term in a record to filter.</p>
+        <div id="facets"></div>
+        <button id="clear-filters" type="button">Clear filters</button>
+      </aside>
+
+      <section class="results-pane">
+        <div class="results-head">
+          <label class="kicker">Results</label>
+          <span id="hit-count" class="hint"></span>
+        </div>
+        <div id="results"></div>
+      </section>
+
+      <section class="detail-pane">
+        <label class="kicker">Record</label>
+        <div id="detail"></div>
+      </section>
+    </div>
+
+    <script src="publish.js"></script>
+    <script src="mapping.js"></script>
+    <script src="markdown.js"></script>
+    <script src="search-data.js"></script>
+    <script src="search.js"></script>
+  </body>
+</html>

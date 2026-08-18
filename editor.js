@@ -26,6 +26,7 @@ const state = {
   stash: {},
   doc: { form: "persoon", text: "" },
   jsonOpen: false,
+  previewOpen: false,
 };
 
 let persistTimer = 0;
@@ -332,7 +333,20 @@ function renderHeader() {
 
 function renderText() {
   const area = document.getElementById("text");
+  const preview = document.getElementById("text-preview");
+  const toggle = document.getElementById("toggle-preview");
   if (area.value !== (state.doc.text || "")) area.value = state.doc.text || "";
+  if (!preview || !toggle) return;
+  if (state.previewOpen) {
+    preview.innerHTML = markdownToHtml(state.doc.text || "") || `<p class="hint">Nothing to preview.</p>`;
+    preview.classList.remove("hidden");
+    area.classList.add("hidden");
+    toggle.textContent = "Edit";
+  } else {
+    preview.classList.add("hidden");
+    area.classList.remove("hidden");
+    toggle.textContent = "Preview";
+  }
 }
 
 function onIslandValue(key, value) {
@@ -585,6 +599,10 @@ function bind() {
   document.getElementById("toggle-json").addEventListener("click", () => {
     state.jsonOpen = !state.jsonOpen;
     renderJson();
+  });
+  document.getElementById("toggle-preview").addEventListener("click", () => {
+    state.previewOpen = !state.previewOpen;
+    renderText();
   });
   document.getElementById("save-json").addEventListener("click", () => {
     if (state.doc.form === "formdef") publishFormdef(state.doc, { migrate: true });

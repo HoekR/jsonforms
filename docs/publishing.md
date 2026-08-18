@@ -8,7 +8,7 @@ Working copy, single-file save, and publish are three different acts.
 | **Save JSON** | one document, as you see it | backup, email, another machine |
 | **Publish** | a corpus snapshot: formdefs + vocabularies + documents | a site, an archive, git |
 
-A published corpus is the JSON other people (or a later static site) should read. It is not the working database.
+A published corpus is the JSON other people (or a later static site) should read. It is not the working database. Field-level rules: [spec.md](spec.md).
 
 ## What gets published
 
@@ -78,6 +78,7 @@ python3 scripts/build_bootstrap.py
 - Not SVN/XML. IngForms wrote XML into a repository; this writes JSON you can put anywhere.
 - Not a guarantee that nested formdefs inside documents were migrated. Top-level keys only; see [poweruser.md](poweruser.md).
 - Not a substitute for **Save JSON** while you are still drafting one record.
+- Not the search UI. Search reads a published corpus; see below.
 
 ## Suggested flow
 
@@ -85,3 +86,40 @@ python3 scripts/build_bootstrap.py
 2. **Save JSON** when a single document should travel or be backed up.
 3. **Publish** when the set of forms + records is a version you would hand to a site or an archive.
 4. Unpack or commit the corpus if the project’s source of truth is git, not a browser profile.
+
+## Search (the gids)
+
+The public idea of the old [Emigratie gids](https://resources.huygens.knaw.nl/emigratie) is kept; the screen is not. Open `search.html`.
+
+- **Free text** runs over the transcription and every string island. `*` is a wildcard.
+- **Name** uses the formdef `namefield` (for Emigratie: `naam_archiefvormer`).
+- **Form** is persoon / instelling / … — the document’s `form`.
+- **Islands** are every `list` and `choice` field in the loaded formdefs. Counts update with the other filters. A keyword in a record is the same filter.
+
+The mapping is the formdef: `text` is analyzed, `list`/`choice` are keyword facets, `form` is a filter. No per-project search form, no Zope catalog.
+
+The reader is static. It uses `search-data.js` (samples plus anything in `published/`) or **Load corpus** on a Publish file. It does not read IndexedDB.
+
+Rebuild the inlined search pack after samples or formdefs change:
+
+```bash
+python3 scripts/build_search.py
+```
+
+## Elasticsearch (optional, later)
+
+When the corpus is large, the same mapping is a real ES index. This does not run Elasticsearch and is not part of the editor:
+
+```bash
+python3 scripts/corpus_to_es.py corpus-2026-08-17.json
+# or, from the repo samples:
+python3 scripts/corpus_to_es.py
+```
+
+Writes `es/mapping.json` and `es/bulk.ndjson`. Load with:
+
+```bash
+curl -X PUT localhost:9200/jsonforms -H 'Content-Type: application/json' --data @es/mapping.json
+curl -X POST localhost:9200/_bulk -H 'Content-Type: application/x-ndjson' --data-binary @es/bulk.ndjson
+```
+
