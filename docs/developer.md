@@ -2,27 +2,36 @@
 
 Browser-only editor. No bundler, no framework, no backend. Python 3 is used only for packing bootstrap and for file migrators.
 
-Editorial use: [user.md](user.md). Formdefs, lists, and migration: [poweruser.md](poweruser.md). Corpus snapshot: [publishing.md](publishing.md).
+Editorial use: [user.md](user.md). Formdefs, lists, and migration: [poweruser.md](poweruser.md). Corpus snapshot: [publishing.md](publishing.md). Interchange formats: [spec.md](spec.md).
 
 ## Layout
 
 | path | role |
 |---|---|
-| `index.html` | shell; script order `bootstrap.js` → `migrate.js` → `db.js` → `publish.js` → `editor.js` |
+| `index.html` | shell; script order `bootstrap.js` → `migrate.js` → `db.js` → `publish.js` → `markdown.js` → `editor.js` |
 | `editor.css` | layout and type |
 | `editor.js` | document model, formdef compile/publish, UI |
+| `markdown.js` | CommonMark subset for `text` (preview + search) |
 | `db.js` | IndexedDB open / seed / load / save |
 | `publish.js` | `formdef-corpus` pack (`isCorpus`, `buildCorpus`) |
 | `migrate.js` | `diffFormdefs`, `coerceValue`, `migrateDocument` |
+| `mapping.js` | formdef → facets / Elasticsearch mapping |
+| `search.html` / `search.js` / `search.css` | static gids-style reader |
+| `search-data.js` | inlined documents for `search.html` |
 | `bootstrap.js` | generated `window.BOOTSTRAP` |
 | `formdefs/*.json` | compiled catalogs; `index.json` is a listing, skipped by the packer |
 | `lists.json` | project vocabularies |
 | `lists-meta.json` | `formdef_level`, `formdef_field_type` |
 | `samples/` | example documents |
+| `docs/spec.md` | interchange specification |
+| `docs/schema/jsonforms.schema.json` | JSON Schema for those shapes |
 | `scripts/build_bootstrap.py` | pack formdefs + lists + draft → `bootstrap.js` |
 | `scripts/update_documents.py` | same migration rules for files on disk |
-| `scripts/convert_emigratie_xml.py` | optional IngForms XML → `samples/*-full.json` |
+| `scripts/pack_corpus.py` | converted JSON folder → `formdef-corpus` for `search.html` |
+| `scripts/convert_emigratie_xml.py` | four Emigratie samples → `samples/*-full.json` |
 | `scripts/unpack_corpus.py` | corpus JSON → `formdefs/` + `published/` |
+| `scripts/build_search.py` | pack samples/published → `search-data.js` |
+| `scripts/corpus_to_es.py` | corpus or samples → `es/mapping.json` + `es/bulk.ndjson` |
 
 Fonts load from Google if the machine is online; the editor runs without them.
 
@@ -105,7 +114,7 @@ The dock does not stringify on every keystroke. `state.jsonOpen` must be true. S
 
 **Load JSON** calls `isCorpus` first. `loadCorpus` replaces `state.formdefs` / `published` / `lists` / `stash` from the pack (it does not merge).
 
-`scripts/unpack_corpus.py` writes the same split to disk for git.
+`scripts/unpack_corpus.py` writes the same split to disk for git. `search.html` reads a corpus or `search-data.js`; it does not use IndexedDB. `mapping.js` / `scripts/corpus_to_es.py` derive keyword facets and an ES mapping from formdef types.
 
 A published corpus is not the IndexedDB working copy. Autosave keeps drafts; publish is an explicit snapshot.
 
@@ -126,8 +135,8 @@ Commit `bootstrap.js` so `file://` and first-run seed work without running Pytho
 - Vocabularies are not editable in the UI.
 - No conflict/merge if two tabs share the origin; last write wins.
 - `file://` IndexedDB is origin-per-path and flaky; prefer `python3 -m http.server`.
-- Emigratie bulk types from the XML corpus (`verbalen`, …) are not ported; only the bundled formdefs.
-- `samples/*-full.json` are IngForms-shaped dumps, not transcription-first documents.
+- Emigratie bulk types from the XML corpus (`verbalen`, …) are not in the bundled editor formdefs.
+- Many zip projects have no formdef; the converter then copies non-empty XML children as islands.
 
 ## Conventions
 

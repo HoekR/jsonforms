@@ -22,7 +22,8 @@ You can also open `index.html` directly. A local server is more reliable: the ed
 - **Right, Islands:** fields you have attached to this document.
 - **Right, From the formdef:** fields you *could* attach but have not yet.
 - **Top:** which form you are editing, load, save one file, and **Publish**.
-- **Bottom:** status. **Show JSON** opens a live preview; you do not need it for ordinary work.
+- **Left, above the text:** a Markdown toolbar (bold, link, record **ref**, **note**).
+- **Bottom:** status, **Edit formdef** / **New formdef**, and **Show JSON**.
 
 ## Write a transcription
 
@@ -31,6 +32,24 @@ You can also open `index.html` directly. A local server is more reliable: the ed
 3. Leave it at that if you want. A document with only `text` is valid.
 
 Work is stored in this browser a fraction of a second after you stop typing. Reload the page and it should still be there.
+
+## Markdown (links and notes)
+
+**Edit** and **Preview** sit at the right of the toolbar. Edit is the source; Preview is the rendered text. The toolbar inserts the same marks (select a span, then **B**, **ref**, **note**, …).
+
+```markdown
+Hij zat in het bestuur van de [Partij van de Arbeid](instelling:01PvdA).
+Later werd hij commissaris.[^1]
+
+[^1]: Benoemd november 1950; zie ook de dossierbeschrijving.
+```
+
+- `[label](persoon:01Haveman)` or `[label](ref:01SZ)` points at another record (`obj_name`).
+- `https://…` links are ordinary web links.
+- `[^1]` plus a `[^1]:` line at the bottom is an explanatory note.
+- Old IngForms marks (`##01SZ# Ministerie##`) still preview as links.
+
+Select a span for an island while **Edit** is showing, not Preview.
 
 ## Attach a field (an island)
 
@@ -75,7 +94,7 @@ A typical file looks like this:
 }
 ```
 
-`form` says which formdef applies. `text` is the transcription. Every other key is an island you attached. Fields you never used are simply absent.
+`form` says which formdef applies. `text` is the transcription. Every other key is an island you attached. Fields you never used are simply absent. The precise JSON contract is [spec.md](spec.md).
 
 **Publish** is different: it downloads a corpus (all working records plus the formdefs and vocabularies). Use that when the *set* of work is a version you would hand to an archive or a site. Details: [publishing.md](publishing.md).
 
@@ -84,6 +103,8 @@ A typical file looks like this:
 **Load JSON** opens a file from disk. A single document becomes the current record. A published corpus (`kind: "formdef-corpus"`) replaces formdefs, lists, and working documents. If a document’s `form` is known, the editor switches to that form.
 
 Load is how you continue work on another machine, or recover after clearing site data.
+
+**Search** (in the header) is the published reader: free text, form, and clickable list/choice islands. It does not edit. See [publishing.md](publishing.md).
 
 ## If the browser crashes
 

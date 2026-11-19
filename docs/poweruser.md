@@ -1,6 +1,6 @@
 # Power user guide
 
-This is for people who define forms, keep vocabularies, and move documents between the editor and disk. Editorial day-to-day use is in [user.md](user.md).
+This is for people who define forms, keep vocabularies, and move documents between the editor and disk. Editorial day-to-day use is in [user.md](user.md). The interchange contract (document, formdef, list, corpus) is [spec.md](spec.md).
 
 ## Document shape
 
@@ -46,7 +46,7 @@ The catalog is itself a document (`form`: `formdef`), edited in the same app.
 
 ### Edit an existing form
 
-**Edit formdef** opens the current form as a formdef document. Attach **Form key**, **Title**, **Fields**, and so on from the palette if they are missing.
+**Edit formdef** (footer) opens the current form as a formdef document. Attach **Form key**, **Title**, **Fields**, and so on from the palette if they are missing.
 
 **add item** under Fields creates another field spec. Set `key` and `title` at least. As soon as `formkey` is set, the form is published into the menu (for `level` `main`).
 
@@ -181,12 +181,34 @@ python3 scripts/build_bootstrap.py
 
 Reload. Existing IndexedDB is **not** re-seeded. To pick up disk formdefs in a browser that already ran the editor: **Load JSON** on the catalog files, or clear this origin’s site data (that also drops working documents).
 
-## Optional XML import
+## Import an IngForms project (Emigratie)
 
-A few Emigratie records can be pulled from the old `content_repository.zip` (not in this repo):
+The editor cannot hold the whole gids: IndexedDB keeps **one document per form**. Import the corpus into **search.html** instead.
+
+The zip is not in this repo. Convert, then pack:
 
 ```bash
-python3 scripts/convert_emigratie_xml.py --zip /path/to/content_repository.zip
+python3 scripts/convert_ingforms_xml.py \
+  --zip /path/to/content_repository.zip \
+  --project emigratie
+
+python3 scripts/convert_ingforms_xml.py --rewrite converted/emigratie
+python3 scripts/pack_corpus.py converted/emigratie \
+  --out converted/emigratie-corpus.json
 ```
 
-Writes `samples/*-full.json`. Those files are fully structured IngForms dumps (`obj_name`, HTML snippets, …). They are not transcription-first until you reshape them (`form` + `text` + selected islands).
+`--rewrite` is for JSON from an earlier convert (wiki marks and `/data/` paths). A new convert already writes Markdown and `instelling:01PvdA` relations.
+
+Only the four editor forms (drops `verbalen`, `mailrapporten`, …):
+
+```bash
+python3 scripts/pack_corpus.py converted/emigratie \
+  --forms persoon,instelling,autopsie,tekst \
+  --out converted/emigratie-gids.json
+```
+
+Open <http://localhost:8000/search.html> → **Load corpus** → choose that JSON.
+
+`converted/` is gitignored (~18k files for Emigratie, ~77MB). Do not paste the pack into `search-data.js`; that file is the small inlined sample set.
+
+If `converted/emigratie/` already exists from an earlier convert, skip the first command and pack only.

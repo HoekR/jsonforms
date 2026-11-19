@@ -122,6 +122,20 @@ header {
 
 header .spacer { flex: 1; }
 
+header a {
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.75rem;
+  background: var(--sheet);
+}
+
+header a:hover,
+header a:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
 label.inline {
   display: flex;
   gap: 0.45rem;
@@ -173,6 +187,60 @@ label.inline select {
   margin-bottom: 0.55rem;
 }
 
+.text-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.text-bar .kicker { margin-bottom: 0; }
+
+.md-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.md-toolbar button {
+  min-width: 1.85rem;
+  padding: 0.18rem 0.42rem;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  background: var(--paper);
+}
+
+.md-toolbar button strong,
+.md-toolbar button em,
+.md-toolbar button code {
+  font-size: 0.82rem;
+  pointer-events: none;
+}
+
+.mode-toggle {
+  display: flex;
+  gap: 0;
+}
+
+.mode-toggle button {
+  font-size: 0.78rem;
+  padding: 0.18rem 0.65rem;
+  background: var(--paper);
+}
+
+.mode-toggle button + button {
+  border-left-width: 0;
+}
+
+.mode-toggle button.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
 #text {
   flex: 1;
   width: 100%;
@@ -184,10 +252,70 @@ label.inline select {
   color: var(--ink);
 }
 
+#text.hidden {
+  display: none;
+}
+
 #text::placeholder {
   color: #a39886;
   font-style: italic;
 }
+
+.text-preview {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid var(--line);
+  background: var(--sheet);
+  padding: 1.6rem 1.8rem 1.8rem;
+}
+
+.text-preview.hidden {
+  display: none;
+}
+
+.markdown-body {
+  font: 1.12rem/1.65 Newsreader, "Iowan Old Style", Palatino, Georgia, serif;
+  color: var(--ink);
+}
+
+.markdown-body p { margin: 0 0 0.85rem; }
+.markdown-body p:last-child { margin-bottom: 0; }
+.markdown-body ul {
+  margin: 0 0 0.85rem;
+  padding-left: 1.2rem;
+}
+.markdown-body li { margin: 0.15rem 0; }
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  margin: 1rem 0 0.4rem;
+}
+.markdown-body code {
+  font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  font-size: 0.86em;
+}
+.markdown-body a.md-ref {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.18em;
+  border: 0;
+  padding: 0;
+  background: none;
+}
+.markdown-body a[href^="http"] { color: var(--accent); }
+.markdown-body .md-fn { font-size: 0.75em; }
+.markdown-body .md-footnotes {
+  margin-top: 1.4rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.markdown-body .md-footnotes ol { padding-left: 1.2rem; }
 
 .hint {
   color: var(--muted);
@@ -330,6 +458,30 @@ label.inline select {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.35rem 0.7rem 0.35rem 1.1rem;
+}
+
+.footer-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.json-dock .footer-tools button {
+  background: transparent;
+  border-color: #5c5348;
+  color: #e6dcc8;
+}
+
+.json-dock .footer-tools button:hover,
+.json-dock .footer-tools button:focus-visible {
+  border-color: #c4b49a;
+  color: #fffaf1;
+}
+
+.json-dock button.quiet {
+  color: #c4b49a;
+  border-color: transparent;
 }
 
 .json-dock .kicker {

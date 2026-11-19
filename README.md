@@ -13,7 +13,11 @@ A document is a large `text` body. Structured fields are optional **islands**. A
 }
 ```
 
-No build. Python 3 is only used for optional scripts. The bundled example is Huygens ING **Emigratie**.
+No build. Python 3 is only used for optional scripts. The bundled example is Huygens ING **Emigratie**. To convert the IngForms XML corpus:
+
+```bash
+python3 scripts/convert_ingforms_xml.py --zip /path/to/content_repository.zip
+```
 
 ## Run
 
@@ -21,7 +25,7 @@ No build. Python 3 is only used for optional scripts. The bundled example is Huy
 python3 -m http.server 8000
 ```
 
-Open <http://localhost:8000>. Or open `index.html` directly (`file://` can make local storage flaky).
+Open <http://localhost:8000> for the editor, or <http://localhost:8000/search.html> to search published records. Or open `index.html` directly (`file://` can make local storage flaky).
 
 ## Docs
 
@@ -30,4 +34,5 @@ Open <http://localhost:8000>. Or open `index.html` directly (`file://` can make 
 | Editing transcriptions | [docs/user.md](docs/user.md) |
 | Formdefs, vocabularies, migration, files | [docs/poweruser.md](docs/poweruser.md) |
 | Publishing a corpus | [docs/publishing.md](docs/publishing.md) |
+| JSON formats (normative) | [docs/spec.md](docs/spec.md) |
 | Architecture and scripts | [docs/developer.md](docs/developer.md) |

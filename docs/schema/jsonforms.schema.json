@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "jsonforms.schema.json",
+  "title": "jsonforms interchange",
+  "$comment": "Companion to docs/spec.md. Documents keep unknown properties. Catalogs and lists are maps keyed by their id.",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fieldType": {
+      "type": "string",
+      "enum": ["text", "list", "choice", "form", "bool"]
+    },
+    "level": {
+      "type": "string",
+      "enum": ["main", "secundair"]
+    },
+    "fieldSpec": {
+      "type": "object",
+      "required": ["key"],
+      "additionalProperties": true,
+      "properties": {
+        "key": { "$ref": "#/$defs/identifier" },
+        "title": { "type": "string" },
+        "type": { "$ref": "#/$defs/fieldType" },
+        "repeater": { "type": "boolean" },
+        "contents_key": { "type": ["string", "null"] },
+        "subname": { "type": ["string", "null"] },
+        "widget": { "type": "string" }
+      }
+    },
+    "formdefCatalog": {
+      "type": "object",
+      "required": ["formkey", "fields"],
+      "additionalProperties": true,
+      "properties": {
+        "formkey": { "$ref": "#/$defs/identifier" },
+        "formtitle": { "type": "string" },
+        "level": { "$ref": "#/$defs/level" },
+        "namefield": { "type": ["string", "null"] },
+        "fields": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/fieldSpec" }
+        },
+        "project": { "type": "string" },
+        "source_path": { "type": "string" }
+      }
+    },
+    "document": {
+      "type": "object",
+      "required": ["form", "text"],
+      "additionalProperties": true,
+      "properties": {
+        "form": { "$ref": "#/$defs/identifier" },
+        "text": { "type": "string" },
+        "obj_name": { "type": "string" }
+      }
+    },
+    "formdefDocument": {
+      "type": "object",
+      "required": ["form", "text", "formkey"],
+      "additionalProperties": true,
+      "properties": {
+        "form": { "const": "formdef" },
+        "text": { "type": "string" },
+        "formkey": { "$ref": "#/$defs/identifier" },
+        "formtitle": { "type": "string" },
+        "level": { "$ref": "#/$defs/level" },
+        "namefield": { "type": "string" },
+        "fields": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/fieldSpec" }
+        }
+      }
+    },
+    "listItem": {
+      "type": "object",
+      "required": ["const"],
+      "additionalProperties": true,
+      "properties": {
+        "const": { "type": "string", "minLength": 1 },
+        "title": { "type": "string" },
+        "use": { "type": "boolean" }
+      }
+    },
+    "list": {
+      "type": "object",
+      "required": ["key", "items"],
+      "additionalProperties": true,
+      "properties": {
+        "key": { "$ref": "#/$defs/identifier" },
+        "name": { "type": "string" },
+        "sort_order": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/listItem" }
+        }
+      }
+    },
+    "corpus": {
+      "type": "object",
+      "required": ["kind", "documents"],
+      "additionalProperties": true,
+      "properties": {
+        "kind": { "const": "formdef-corpus" },
+        "published": { "type": "string" },
+        "formdefs": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/formdefCatalog" }
+        },
+        "lists": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/list" }
+        },
+        "documents": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/document" }
+        }
+      }
+    },
+    "bootstrap": {
+      "type": "object",
+      "required": ["formdefs", "lists"],
+      "additionalProperties": true,
+      "properties": {
+        "formdefs": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/formdefCatalog" }
+        },
+        "lists": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/list" }
+        },
+        "draft": { "$ref": "#/$defs/document" }
+      }
+    },
+    "searchData": {
+      "type": "object",
+      "required": ["formdefs", "lists", "documents"],
+      "properties": {
+        "formdefs": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/formdefCatalog" }
+        },
+        "lists": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/list" }
+        },
+        "documents": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/document" }
+        }
+      }
+    }
+  },
+  "oneOf": [
+    { "$ref": "#/$defs/document" },
+    { "$ref": "#/$defs/formdefCatalog" },
+    { "$ref": "#/$defs/formdefDocument" },
+    { "$ref": "#/$defs/corpus" }
+  ]
+}
